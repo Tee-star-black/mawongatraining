@@ -1,0 +1,31 @@
+DirectoryIndex index.html
+Options -Indexes
+RewriteEngine On
+
+# Canonicalise original .html URLs and legacy misspellings.
+RewriteCond %{THE_REQUEST} \s/+index\.html[?\s] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+(about|about-us|clinical-training|biomedical-ethics|course-prospectus|partners|contact-us|privacy-policy)\.html[?\s] [NC]
+RewriteRule ^(about|about-us)\.html$ /about/ [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+(clinical-training|biomedical-ethics|course-prospectus|partners|contact-us|privacy-policy)\.html[?\s] [NC]
+RewriteRule ^(clinical-training|biomedical-ethics|course-prospectus|partners|contact-us|privacy-policy)\.html$ /$1/ [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+(medical-entreprenuership|medical-entrepreneurship)\.html[?\s] [NC]
+RewriteRule ^(medical-entreprenuership|medical-entrepreneurship)\.html$ /medical-entrepreneurship/ [R=301,L]
+RewriteRule ^medical-entreprenuership/?$ /medical-entrepreneurship/ [R=301,L]
+RewriteRule ^about-us/?$ /about/ [R=301,L]
+
+# Keep development files outside the public surface.
+RewriteRule ^(?:content|scripts|tests|docs)(?:/|$) - [F,L]
+RewriteRule ^(?:package(?:-lock)?\.json|README\.md)$ - [F,L]
+
+# Existing clean URLs resolve directly to the rebuilt HTML pages.
+RewriteRule ^(about|clinical-training|biomedical-ethics|course-prospectus|partners|contact-us|privacy-policy)$ /$1/ [R=301,L]
+RewriteRule ^medical-entrepreneurship$ /medical-entrepreneurship/ [R=301,L]
+RewriteRule ^about/$ about.html [L]
+RewriteRule ^clinical-training/$ clinical-training.html [L]
+RewriteRule ^biomedical-ethics/$ biomedical-ethics.html [L]
+RewriteRule ^medical-entrepreneurship/$ medical-entreprenuership.html [L]
+RewriteRule ^course-prospectus/$ course-prospectus.html [L]
+RewriteRule ^partners/$ partners.html [L]
+RewriteRule ^contact-us/$ contact-us.html [L]
+RewriteRule ^privacy-policy/$ privacy-policy.html [L]

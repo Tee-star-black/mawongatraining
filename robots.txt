@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://mawongatraining.co.za/sitemap.xml

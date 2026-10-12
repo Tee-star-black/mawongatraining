@@ -1,31 +1,47 @@
 # Mawonga Training
 
-Existing website source imported from the supplied `mawongaaaa.zip` as the baseline for the website reconstruction.
+A responsive rebuild of the Mawonga Training website, using the supplied website content and real workshop photographs. Blue, warm white and orange styling with sharp geometry, programme discovery and a searchable course prospectus.
 
-## Source files
+## Run locally
 
-All 14 supplied files are preserved byte-for-byte. Download suffixes such as ` (19)` were removed from filenames; the wrapping ZIP folder was removed so `index.html` is at the repository root. Both `about.html` and `about-us.html` are retained because they are different source pages.
-
-## Open in VS Code
+Requires Node.js 20 or later. No package installation is needed.
 
 ```powershell
-git clone https://github.com/Tee-star-black/mawongatraining.git
-cd mawongatraining
-code .
+git pull origin main
+npm run dev
 ```
 
-## Add the remaining images
+Open **http://localhost:3000**. This preview resolves the clean page URLs and redirects legacy URLs; VS Code Live Server does not provide these routes.
 
-Copy the original images folder into `images/` at the repository root, alongside `index.html`. Preserve filenames and case, including spaces, because the existing pages reference those exact paths.
+## Edit and build
+
+- `scripts/build.mjs`: page content, shared navigation, footer, metadata and schema.
+- `content/courses.json`: the 15 existing prospectus courses, modules, activities, durations and indicative fees.
+- `content/privacy.html`: preserved privacy, terms and professional disclaimer copy.
+- `assets/site.css`: responsive design, focus styles and reduced-motion support.
+- `assets/site.js`: mobile menu, programme selector and prospectus search/filter/reset.
+- `assets/workshop-*.webp`: optimised copies of the three supplied workshop photos. Original images remain in `images/`.
 
 ```powershell
-git add images
-git commit -m "Add original website images"
-git push origin main
+npm run build
+npm run check
+npm test
 ```
 
-## Current limitations
+The build writes HTML files, `sitemap.xml` and `robots.txt` to the repository root. Edit source files and rebuild rather than editing generated pages directly. Course information remains available without JavaScript; interactive filtering is a progressive enhancement.
 
-This is an import of the existing site, before the redesign. There is no Node project or `npm` script yet. VS Code Live Server can preview the homepage; links using clean paths such as `/clinical-training/` require server routing to the corresponding HTML files. The original hosting rewrite configuration was not included in the ZIP. The PHP endpoint requires a PHP server and its original runtime dependencies/configuration; importing it does not verify that submissions work.
+## Pages and hosting
 
-Images have not yet been supplied. No production deployment is performed by this import.
+Home, about, clinical training, biomedical ethics, medical entrepreneurship, prospectus, partners, contact and privacy pages are rebuilt. The misspelled `/medical-entreprenuership/` route and `/about-us/` are retained as redirects to their canonical routes.
+
+`.htaccess` supplies Apache clean URLs and permanent redirects. Apache must enable `mod_rewrite` and allow this configuration. Other hosts require equivalent routing; a bare static upload without routing will not resolve the clean URLs. Production Apache behaviour still needs verification on the actual host.
+
+Contact actions open the existing telephone, email and WhatsApp channels. No contact submission backend, payment flow or learner portal is introduced. The supplied `api.php` remains unchanged and is not executed or exposed as source by the Node preview. Its runtime and mail behaviour have not been verified.
+
+This repository change does not deploy the live domain. It also does not submit a sitemap to Search Console.
+
+## SEO and verification
+
+See `docs/seo-implementation.md` for the supplied SEO guide review and implementation decisions. Automated checks cover page links and fragments, asset existence, metadata, JSON-LD, course count and sitemap coverage. Tests cover route handling, legacy redirects, images, restricted runtime files and browser interaction logic.
+
+A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.

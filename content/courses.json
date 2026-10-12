@@ -1,0 +1,243 @@
+[
+  {
+    "stream": "practice",
+    "title": "Starting a Private Nurse Practice",
+    "description": "Launch a compliant private nurse practice with a clear view of registration, infrastructure, and staffing.",
+    "duration": "4 hours",
+    "fee": "R1 250 total",
+    "modules": [
+      "Regulatory requirements for SA private practices",
+      "Infrastructure and clinic setup",
+      "Staffing and HR basics"
+    ],
+    "outputs": [
+      "Registration and compliance quiz",
+      "Clinic floorplan design exercise",
+      "HR planning exercise with contracts and job descriptions"
+    ]
+  },
+  {
+    "stream": "practice",
+    "title": "Running a Compliant Nurse-Led Clinic",
+    "description": "Build the everyday systems that keep a nurse-led clinic compliant, efficient, and audit-ready.",
+    "duration": "3 hours",
+    "fee": "R950 total",
+    "modules": [
+      "SOPs and policies",
+      "Workflow optimization",
+      "Infection control and recordkeeping"
+    ],
+    "outputs": [
+      "Editable SOP templates",
+      "Patient-flow mapping exercise",
+      "Infection-control quiz and audit checklist"
+    ]
+  },
+  {
+    "stream": "practice",
+    "title": "Developing Standard Operating Procedures",
+    "description": "Write, assign, and implement SOPs that support administrative, clinical, and financial consistency.",
+    "duration": "3 hours",
+    "fee": "R850 total",
+    "modules": [
+      "SOP writing framework",
+      "Implementation and monitoring"
+    ],
+    "outputs": [
+      "Text and example packs",
+      "Template packs for implementation",
+      "Responsibility assignment exercise"
+    ]
+  },
+  {
+    "stream": "business",
+    "title": "Entrepreneurship for Healthcare Professionals",
+    "description": "Translate an idea into a workable healthcare business direction with patient insight and a mini business plan.",
+    "duration": "3 hours",
+    "fee": "R850 total",
+    "modules": [
+      "Business planning fundamentals",
+      "Market analysis and target patients",
+      "Developing a mini business plan"
+    ],
+    "outputs": [
+      "Mini business plan exercise",
+      "Patient profile and SWOT work",
+      "Worksheet templates for mission and vision work"
+    ]
+  },
+  {
+    "stream": "business",
+    "title": "Financial Management for Healthcare Practices",
+    "description": "Build budget control, forecasting, and pricing confidence for a healthcare practice that needs steady financial discipline.",
+    "duration": "3 hours",
+    "fee": "R950 total",
+    "modules": [
+      "Budgeting and forecasting",
+      "Pricing and revenue management"
+    ],
+    "outputs": [
+      "Monthly budget exercise",
+      "Income and expense tracking templates",
+      "Pricing structure assignment with sustainability focus"
+    ]
+  },
+  {
+    "stream": "business",
+    "title": "Healthcare Practice Operations Management",
+    "description": "Organise daily practice flow, scheduling, and digital operations tools in a structured operational rhythm.",
+    "duration": "2.5 hours",
+    "fee": "R750 total",
+    "modules": [
+      "Management, daily operations, and scheduling",
+      "Digital tools for operations"
+    ],
+    "outputs": [
+      "Weekly schedule build exercise",
+      "Digital-tool selection and implementation exercise",
+      "Platform screenshots and EMR or recordkeeping app examples"
+    ]
+  },
+  {
+    "stream": "marketing",
+    "title": "Healthcare Marketing for Clinics",
+    "description": "Build a clear marketing foundation for clinic visibility, patient targeting, and practical planning.",
+    "duration": "2.5 hours",
+    "fee": "R750 total",
+    "modules": [
+      "Marketing fundamentals",
+      "Marketing plan development",
+      "Case study and application"
+    ],
+    "outputs": [
+      "Marketing plan draft exercise",
+      "Marketing calendar examples",
+      "Infographics, text materials, and applied case study work"
+    ]
+  },
+  {
+    "stream": "marketing",
+    "title": "Social Media for Healthcare Professionals",
+    "description": "Use social platforms more strategically with professional content, scheduling habits, and engagement tracking.",
+    "duration": "2 hours",
+    "fee": "R650 total",
+    "modules": [
+      "Social media strategy",
+      "Content creation and scheduling",
+      "Metrics and engagement"
+    ],
+    "outputs": [
+      "Social media post set creation",
+      "Text and visual content resources",
+      "WhatsApp examples and engagement review work"
+    ]
+  },
+  {
+    "stream": "marketing",
+    "title": "Community Engagement for Primary Healthcare Providers",
+    "description": "Design outreach that is community-aware, structured, and relevant to the local realities of primary healthcare.",
+    "duration": "2.5 hours",
+    "fee": "R750 total",
+    "modules": [
+      "Community mapping and outreach",
+      "Outreach planning and strategy",
+      "Implementation case study"
+    ],
+    "outputs": [
+      "Community outreach plan design",
+      "Worksheets for planning and strategy",
+      "Rural-clinic case study application"
+    ]
+  },
+  {
+    "stream": "leadership",
+    "title": "Leadership Skills for Healthcare Professionals",
+    "description": "Strengthen self-leadership and day-to-day team management in healthcare environments that need calm, clear coordination.",
+    "duration": "2 hours",
+    "fee": "R650 total",
+    "modules": [
+      "Self-leadership and team management",
+      "Team management"
+    ],
+    "outputs": [
+      "Leadership reflection and action plan",
+      "Case-scenario activities",
+      "Text and activity resources"
+    ]
+  },
+  {
+    "stream": "leadership",
+    "title": "Emotional Intelligence in Healthcare Practice",
+    "description": "Use emotional intelligence more deliberately in patient-facing and team-based healthcare situations.",
+    "duration": "45 mins",
+    "fee": "1 module",
+    "modules": [
+      "EI fundamentals"
+    ],
+    "outputs": [
+      "EI knowledge quiz",
+      "Practice-scenario exercises",
+      "Text and exercise materials"
+    ]
+  },
+  {
+    "stream": "digital",
+    "title": "Digital Tools for Modern Healthcare Practices",
+    "description": "Choose and implement digital tools that support scheduling, tracking, dashboards, and day-to-day practice flow.",
+    "duration": "1 hour",
+    "fee": "1 module",
+    "modules": [
+      "EMR, scheduling, patient tracking, and modern practice tools"
+    ],
+    "outputs": [
+      "Digital-tool selection and implementation demo",
+      "Platform screenshots and dashboard examples",
+      "Assignment to choose and implement a tool"
+    ]
+  },
+  {
+    "stream": "digital",
+    "title": "Health Information Management in Clinics",
+    "description": "Strengthen recordkeeping, privacy, reporting, and clinic-level information compliance.",
+    "duration": "45 mins",
+    "fee": "1 module",
+    "modules": [
+      "Data privacy, reporting, compliance, and clinic recordkeeping"
+    ],
+    "outputs": [
+      "Recordkeeping quiz and exercise",
+      "Templates and privacy case studies",
+      "Text resources for clinic information systems"
+    ]
+  },
+  {
+    "stream": "me",
+    "title": "Monitoring & Evaluation for Healthcare Programmes",
+    "description": "Learn the basics of M&E planning and apply them to clinic-level healthcare programmes.",
+    "duration": "1 hour",
+    "fee": "1 module",
+    "modules": [
+      "Programmes, M&E basics, and frameworks"
+    ],
+    "outputs": [
+      "M&E plan design assignment",
+      "Worksheets and text materials",
+      "Clinic-level example for applied practice"
+    ]
+  },
+  {
+    "stream": "me",
+    "title": "Quality Improvement in Primary Healthcare",
+    "description": "Use auditing and continuous-improvement tools to review a service, identify gaps, and improve practice quality.",
+    "duration": "45 mins",
+    "fee": "1 module",
+    "modules": [
+      "Continuous improvement and auditing"
+    ],
+    "outputs": [
+      "Audit-a-mock-clinic exercise",
+      "Templates and case studies",
+      "Sample report formats"
+    ]
+  }
+]
