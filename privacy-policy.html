@@ -1,0 +1,1130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mawonga Training | Privacy, Terms & Disclaimer</title>
+  <meta
+    name="description"
+    content="Mawonga Training privacy policy, POPIA and data protection notice, terms of use, and professional training disclaimer."
+  >
+  <style>
+    :root {
+      --bg: #dce6f3;
+      --ink: #213956;
+      --muted: #60758d;
+      --line: rgba(64, 104, 145, 0.16);
+      --blue: #6b88b0;
+      --blue-deep: #446a93;
+      --blue-strong: #2f547a;
+      --orange: #dd7d41;
+      --white: #ffffff;
+      --shadow: 0 24px 60px rgba(47, 84, 122, 0.14);
+      --max: 1120px;
+      --display: "Bahnschrift", "Aptos Display", "Trebuchet MS", sans-serif;
+      --body: "Aptos", "Segoe UI", "Trebuchet MS", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--body);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 24%),
+        radial-gradient(circle at 85% 12%, rgba(221, 125, 65, 0.12), transparent 20%),
+        linear-gradient(180deg, #edf3fa 0%, var(--bg) 48%, #eef4fb 100%);
+      line-height: 1.68;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    .brand strong {
+      font-family: var(--display);
+      letter-spacing: -0.03em;
+    }
+
+    [id] {
+      scroll-margin-top: 7rem;
+    }
+
+    .wrap {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: linear-gradient(90deg, rgba(47, 84, 122, 0.96), rgba(68, 106, 147, 0.96));
+      color: rgba(255, 255, 255, 0.92);
+      padding: 0.8rem 0;
+    }
+
+    .topbar-inner,
+    .topbar-links,
+    .nav-shell,
+    .nav-links,
+    .nav-group,
+    .nav-dropdown,
+    .hero-meta,
+    .quick-links,
+    .footer-links,
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .topbar-inner {
+      justify-content: space-between;
+    }
+
+    .topbar-links {
+      justify-content: flex-end;
+      font-weight: 600;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 25;
+      padding: 0.8rem 0 0;
+      transition: padding 220ms ease;
+    }
+
+    .nav-shell {
+      width: min(calc(100vw - 2rem), 1380px);
+      margin-inline: auto;
+      justify-content: space-between;
+      gap: 1.6rem;
+      padding: 1rem 1.3rem;
+      border-radius: 999px;
+      background: rgba(237, 243, 250, 0.74);
+      border: 1px solid rgba(255, 255, 255, 0.58);
+      box-shadow: 0 12px 36px rgba(47, 84, 122, 0.1);
+      backdrop-filter: blur(18px);
+      transition: background 220ms ease, padding 220ms ease, box-shadow 220ms ease;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      min-width: 0;
+    }
+
+    .mark {
+      width: 3.35rem;
+      height: 3.35rem;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 12px 28px rgba(47, 84, 122, 0.18);
+      flex-shrink: 0;
+      transition: width 220ms ease, height 220ms ease;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 0.12rem;
+      min-width: 0;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 1.08rem;
+    }
+
+    .brand-copy span,
+    .nav-links a,
+    .nav-parent {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .nav-links {
+      flex: 1 1 auto;
+      justify-content: center;
+      gap: 1.5rem;
+      font-weight: 700;
+    }
+
+    .nav-links a,
+    .nav-parent {
+      position: relative;
+      padding: 0.45rem 0.2rem;
+      white-space: nowrap;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      font: inherit;
+      font-weight: inherit;
+      transition: color 180ms ease;
+    }
+
+    .nav-links a::after,
+    .nav-parent::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.18rem;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--orange));
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 180ms ease;
+    }
+
+    .nav-parent {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .nav-parent .caret {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg) translateY(-1px);
+      transition: transform 180ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .nav-parent:hover,
+    .nav-parent:focus-visible,
+    .topbar a:hover,
+    .footer-links a:hover,
+    .footer-social a:hover {
+      color: var(--orange);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after,
+    .nav-links a[aria-current="page"]::after,
+    .nav-parent:hover::after,
+    .nav-parent:focus-visible::after,
+    .nav-group.open > .nav-parent::after {
+      transform: scaleX(1);
+    }
+
+    .nav-links a[aria-current="page"],
+    .nav-group.open > .nav-parent {
+      color: var(--blue-strong);
+    }
+
+    .nav-group {
+      position: relative;
+      flex-wrap: nowrap;
+    }
+
+    .nav-group.open .caret {
+      transform: rotate(225deg) translateY(-1px);
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 0.9rem);
+      left: 50%;
+      min-width: 17rem;
+      padding: 0.7rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(64, 104, 145, 0.12);
+      box-shadow: 0 20px 44px rgba(47, 84, 122, 0.14);
+      backdrop-filter: blur(18px);
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(-50%, -8px);
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+      z-index: 5;
+    }
+
+    .nav-dropdown a {
+      display: block;
+      width: 100%;
+      padding: 0.8rem 0.95rem;
+      border-radius: 16px;
+      white-space: normal;
+    }
+
+    .nav-dropdown a::after {
+      display: none;
+    }
+
+    .nav-dropdown a:hover,
+    .nav-dropdown a:focus-visible {
+      background: rgba(68, 106, 147, 0.08);
+      color: var(--blue-strong);
+    }
+
+    .nav-group:hover .nav-dropdown,
+    .nav-group:focus-within .nav-dropdown,
+    .nav-group.open .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, 0);
+      pointer-events: auto;
+    }
+
+    .nav-tools {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .contact-group .nav-parent {
+      width: 3rem;
+      height: 3rem;
+      padding: 0;
+      border-radius: 999px;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--blue-deep), var(--blue));
+      color: var(--white);
+      box-shadow: 0 14px 30px rgba(68, 106, 147, 0.18);
+    }
+
+    .contact-group .nav-parent::after,
+    .contact-group .caret {
+      display: none;
+    }
+
+    .contact-group .nav-parent:hover,
+    .contact-group .nav-parent:focus-visible,
+    .contact-group.open > .nav-parent {
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .contact-group .nav-parent svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      stroke: currentColor;
+    }
+
+    .contact-group .nav-dropdown {
+      left: auto;
+      right: 0;
+      min-width: 18rem;
+      transform: translateY(-8px);
+    }
+
+    .contact-group:hover .nav-dropdown,
+    .contact-group:focus-within .nav-dropdown,
+    .contact-group.open .nav-dropdown {
+      transform: translateY(0);
+    }
+
+    .nav-dropdown a small {
+      display: block;
+      margin-top: 0.14rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .menu {
+      display: none;
+      border: 0;
+      background: transparent;
+      padding: 0.35rem;
+      cursor: pointer;
+      color: var(--blue-strong);
+    }
+
+    .menu span {
+      display: block;
+      width: 1.5rem;
+      height: 2px;
+      background: currentColor;
+      margin: 0.28rem 0;
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .nav.is-scrolled {
+      padding-top: 0.35rem;
+    }
+
+    .nav.is-scrolled .nav-shell {
+      padding: 0.78rem 1.1rem;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 18px 34px rgba(47, 84, 122, 0.14);
+    }
+
+    .nav.is-scrolled .mark {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .hero {
+      padding: 2.4rem 0 3.4rem;
+    }
+
+    .hero-panel {
+      position: relative;
+      padding: clamp(2.4rem, 6vw, 4.6rem) 0 1.8rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(68, 106, 147, 0.1);
+      color: var(--blue-strong);
+      font-size: 0.79rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 1rem auto 0;
+      max-width: 13ch;
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      line-height: 0.97;
+    }
+
+    .hero p {
+      max-width: 54rem;
+      margin: 1rem auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-meta {
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .hero-meta span,
+    .quick-links a {
+      padding: 0.72rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid rgba(64, 104, 145, 0.12);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--blue-strong);
+      font-weight: 700;
+    }
+
+    .quick-links {
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    main {
+      padding-bottom: 4rem;
+    }
+
+    .section-block {
+      padding: 2rem 0;
+      border-top: 1px solid rgba(64, 104, 145, 0.14);
+    }
+
+    .section-block:last-of-type {
+      border-bottom: 1px solid rgba(64, 104, 145, 0.14);
+    }
+
+    .section-kicker {
+      color: var(--orange);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-block h2 {
+      margin: 0.55rem 0 0;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1;
+    }
+
+    .section-block p {
+      margin: 0.85rem 0 0;
+      max-width: 62rem;
+      color: var(--muted);
+    }
+
+    .section-block h3 {
+      margin: 1.35rem 0 0;
+      color: var(--blue-strong);
+      font-size: 1.18rem;
+      line-height: 1.2;
+    }
+
+    .section-block ul {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+      max-width: 62rem;
+    }
+
+    .section-block li {
+      position: relative;
+      padding-left: 1rem;
+      color: var(--ink);
+    }
+
+    .section-block li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72rem;
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .compliance-banner {
+      margin-top: 1rem;
+      padding: 1.2rem 1.3rem;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(68, 106, 147, 0.08), rgba(221, 125, 65, 0.1));
+      border: 1px solid rgba(64, 104, 145, 0.12);
+      color: var(--blue-strong);
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 1.2rem 0 2rem;
+    }
+
+    .footer-panel {
+      padding: 2rem 0 2.2rem;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(47, 84, 122, 0.98), rgba(68, 106, 147, 0.96));
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .footer-brand {
+      display: grid;
+      gap: 0.8rem;
+      justify-items: center;
+    }
+
+    .footer-brand .mark {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .footer-brand strong {
+      color: var(--white);
+      font-size: 1.16rem;
+    }
+
+    .footer-links,
+    .footer-social {
+      justify-content: center;
+      margin-top: 1.2rem;
+    }
+
+    .footer-contact {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.45rem;
+      justify-items: center;
+      color: rgba(255, 255, 255, 0.82);
+      font-weight: 600;
+    }
+
+    .note {
+      margin: 1rem 0 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .menu {
+        display: block;
+      }
+
+      .nav-links,
+      .nav-tools {
+        display: none;
+      }
+
+      .nav[data-open="true"] .nav-links {
+        display: grid;
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        top: calc(100% + 0.65rem);
+        padding: 1rem;
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        justify-items: start;
+        gap: 0.2rem;
+      }
+
+      .nav[data-open="true"] .nav-links > a,
+      .nav[data-open="true"] .nav-links > .nav-group {
+        width: 100%;
+      }
+
+      .nav[data-open="true"] .nav-links > a {
+        padding: 0.75rem 0.35rem;
+      }
+
+      .nav[data-open="true"] .nav-group {
+        display: grid;
+        gap: 0.2rem;
+      }
+
+      .nav[data-open="true"] .nav-parent {
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.75rem 0.35rem;
+      }
+
+      .nav[data-open="true"] .nav-dropdown {
+        position: static;
+        min-width: 0;
+        padding: 0 0 0 0.8rem;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        pointer-events: auto;
+        display: none;
+      }
+
+      .nav[data-open="true"] .nav-group.open .nav-dropdown {
+        display: grid;
+      }
+
+      .nav[data-open="true"] .nav-dropdown a {
+        padding: 0.65rem 0.35rem;
+        border-radius: 12px;
+      }
+
+      .nav[data-open="true"] .menu span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+
+      .nav[data-open="true"] .menu span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav[data-open="true"] .menu span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner,
+      .topbar-links,
+      .hero-meta,
+      .quick-links,
+      .footer-links,
+      .footer-social {
+        display: grid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div>29 Landor Street, Tulisa Park, South Hills JHB 2197</div>
+      <div class="topbar-links">
+        <a href="tel:+27116131141">+27 11 613 1141</a>
+        <a href="mailto:info@mawongatraining.co.za">info@mawongatraining.co.za</a>
+        <a href="https://wa.me/27798821845" target="_blank" rel="noreferrer">WhatsApp us</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav" data-open="false" aria-label="Primary">
+    <div class="wrap nav-shell">
+      <a class="brand" href="/">
+        <img class="mark" src="/images/MawongaT.png" alt="Mawonga Training logo">
+        <span class="brand-copy">
+          <strong>Mawonga Training</strong>
+          <span>Clinical and entrepreneurial growth for healthcare professionals.</span>
+        </span>
+      </a>
+      <button class="menu" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about/">About Us</a>
+        <div class="nav-group">
+          <button class="nav-parent" type="button" aria-expanded="false">
+            <span>Courses</span>
+            <span class="caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav-dropdown">
+            <a href="/clinical-training/">Clinical Training</a>
+            <a href="/biomedical-ethics/">Biomedical Ethics</a>
+            <a href="/medical-entreprenuership/">Medical Entrepreneurship</a>
+          </div>
+        </div>
+        <a href="/course-prospectus/">Course Prospectus</a>
+        <a href="./privacy-policy.html" aria-current="page">Legal &amp; Privacy</a>
+      </div>
+      <div class="nav-tools">
+        <div class="nav-group contact-group">
+          <button class="nav-parent" type="button" aria-expanded="false" aria-label="Open contact options">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 15.5V18a2 2 0 0 1-2.18 2A19.84 19.84 0 0 1 10.18 17a19.5 19.5 0 0 1-6-6A19.84 19.84 0 0 1 1 2.18 2 2 0 0 1 3 0h2.5a2 2 0 0 1 2 1.72l.4 2.94a2 2 0 0 1-.57 1.7l-1.3 1.3a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 1.7-.57l2.94.4A2 2 0 0 1 21 15.5Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown">
+            <a href="tel:+27116131141"><span>Call office</span><small>+27 11 613 1141</small></a>
+            <a href="tel:+27798821845"><span>Call mobile</span><small>+27 79 882 1845</small></a>
+            <a href="https://wa.me/27798821845" target="_blank" rel="noreferrer"><span>WhatsApp</span><small>Start a direct chat</small></a>
+            <a href="mailto:info@mawongatraining.co.za"><span>Email</span><small>info@mawongatraining.co.za</small></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-panel">
+      <span class="eyebrow">Legal &amp; Compliance</span>
+      <h1>Privacy Policy</h1>
+      <p>
+        An overview of data protection. This page explains what kind of personal information may be collected when
+        you visit or use the Mawonga Training website, why that information may be collected, and how it may be handled.
+      </p>
+      <div class="hero-meta">
+        <span>Last updated: March 14, 2026</span>
+        <span>Applies to Mawonga Training website use, enquiries, and professional training interactions</span>
+      </div>
+      <div class="quick-links">
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#data-protection">POPIA &amp; Data Protection</a>
+        <a href="#terms-of-use">Terms of Use</a>
+        <a href="#training-disclaimer">Training Disclaimer</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-block" id="privacy-policy">
+      <div class="wrap">
+        <span class="section-kicker">Privacy Policy</span>
+        <h2>An overview of data protection.</h2>
+        <p>
+          The following gives a simple overview of what kind of personal information may be collected,
+          why it may be collected, and how it may be handled when you visit or use this website.
+          Personal information means any data that can be used to identify you directly or indirectly.
+        </p>
+
+        <h3>General</h3>
+        <p>
+          Detailed information on the subject of data protection is set out below. Part of the information may be
+          collected because you choose to contact Mawonga Training, while other information may be generated
+          automatically through normal technical website use.
+        </p>
+
+        <h3>Who is responsible for data collection on this website?</h3>
+        <p>
+          The website operator is responsible for the processing of data collected through this website:
+          Mawonga Training, 29 Landor Street, Tulisa Park, South Hills JHB 2197.
+          Contact details: <a href="mailto:info@mawongatraining.co.za">info@mawongatraining.co.za</a>,
+          <a href="tel:+27116131141">+27 11 613 1141</a>, and
+          <a href="tel:+27798821845">+27 79 882 1845</a>.
+        </p>
+
+        <h3>How do we collect your data?</h3>
+        <p>
+          Some data are collected when you provide them to us directly. This may include information you provide
+          when you email us, call us, WhatsApp us, request information about training, or otherwise communicate
+          with Mawonga Training.
+        </p>
+        <p>
+          Other data may be collected automatically by IT systems when you access the website. These are primarily
+          technical data such as the browser you use, the operating system you use, the pages you access,
+          the time of access, and similar technical information that helps the site function securely.
+        </p>
+
+        <h3>What do we use your data for?</h3>
+        <ul>
+          <li>To ensure the proper functioning, security, and stability of the website.</li>
+          <li>To respond to training enquiries, collaboration requests, and administrative communication.</li>
+          <li>To understand how the website is being used at a technical level and improve the user experience where appropriate.</li>
+          <li>To meet legal, professional, or operational obligations where reasonably required.</li>
+        </ul>
+
+        <h3>What rights do you have regarding your data?</h3>
+        <ul>
+          <li>You may request information about whether your personal data are stored and how they are being used.</li>
+          <li>You may request correction of inaccurate data, restriction of processing where appropriate, or deletion where legally permissible.</li>
+          <li>You may object to certain uses of your personal information, especially where direct marketing or unnecessary processing is involved.</li>
+          <li>You may raise a complaint with the competent regulatory authority if you believe your data protection rights have been infringed.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-block" id="data-protection">
+      <div class="wrap">
+        <span class="section-kicker">POPIA &amp; Data Protection</span>
+        <h2>General information and mandatory information.</h2>
+        <p>
+          The operators of this website take the protection of personal information seriously. Personal data
+          should be treated confidentially and in accordance with applicable legal and professional obligations,
+          including relevant South African data protection principles such as POPIA where applicable.
+        </p>
+        <p>
+          Please note that data transmission over the internet, including communication by email, may be subject
+          to security risks. Complete protection of data against access by third parties cannot be guaranteed.
+        </p>
+
+        <h3>Revocation of consent</h3>
+        <p>
+          Where data processing depends on your consent, you may revoke that consent at any time with future effect.
+          An informal email request is generally sufficient. Data processed before we receive your request may still
+          have been processed lawfully.
+        </p>
+
+        <h3>Right to complain to a regulatory authority</h3>
+        <p>
+          If there has been a breach of applicable data protection law, an affected person may raise the matter
+          with a competent regulatory authority, including the South African Information Regulator where applicable.
+        </p>
+
+        <h3>Right to access, correction, blocking, restriction, or deletion</h3>
+        <p>
+          As permitted by law, you may request information about your stored personal data, including the origin,
+          recipients, and purpose of processing. You may also request correction, restriction, blocking, or deletion
+          where legally appropriate.
+        </p>
+
+        <h3>Right to data portability</h3>
+        <p>
+          Where technically feasible and legally applicable, you may request that data processed on the basis of
+          consent or a contractual relationship be provided to you, or to another responsible party, in a standard
+          machine-readable format.
+        </p>
+
+        <h3>Opposition to promotional communication</h3>
+        <p>
+          Contact details published on this website are not to be used for unsolicited advertising or promotional
+          messages. Mawonga Training reserves the right to take appropriate action against spam or unauthorised
+          promotional contact.
+        </p>
+
+        <h3>Server log files and technical records</h3>
+        <p>
+          The website hosting environment may automatically collect and store information transmitted by your browser
+          in server log files. These records may include:
+        </p>
+        <ul>
+          <li>Browser type and browser version.</li>
+          <li>Operating system used.</li>
+          <li>Referrer URL.</li>
+          <li>Hostname of the accessing computer.</li>
+          <li>Time of the server request.</li>
+          <li>IP address.</li>
+        </ul>
+        <p>
+          These technical records are used to help maintain secure and stable website operation and are not
+          intentionally combined with other data sources unless necessary for lawful technical or security reasons.
+        </p>
+
+        <h3>Cookies and browser controls</h3>
+        <p>
+          This website may rely on standard browser technologies, cached content, or cookies used by essential
+          functions or embedded third-party services. You can configure your browser to notify you about cookies,
+          to reject them, or to delete them automatically. Disabling cookies may limit some features of a website
+          or embedded service.
+        </p>
+
+        <h3>Direct communication data</h3>
+        <p>
+          If you contact Mawonga Training by email, telephone, WhatsApp, or any direct communication channel,
+          the details you provide may be stored and processed for the purpose of responding to your enquiry and any
+          related follow-up communication. This information is not shared unnecessarily and is handled only to the
+          extent reasonably required for communication, administration, or professional follow-up.
+        </p>
+
+        <h3>Retention of data</h3>
+        <p>
+          Personal data are retained only for as long as reasonably necessary for the purpose for which they were
+          collected, or as long as legal, professional, or operational retention duties require.
+        </p>
+        <div class="compliance-banner">
+          Because this is a healthcare training website, personal information may sometimes relate to professional
+          role, organisational affiliation, training participation, or sensitive administrative communication.
+          Appropriate care should therefore be taken in handling all such information.
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="terms-of-use">
+      <div class="wrap">
+        <span class="section-kicker">Terms of Use</span>
+        <h2>Website use, services, and third-party tools.</h2>
+        <p>
+          By using the Mawonga Training website, you agree to use the site only for lawful, appropriate,
+          and professional purposes connected to information, education, communication, or legitimate engagement
+          with Mawonga Training and its programmes.
+        </p>
+
+        <h3>Processing of customer, service, or contract-related data</h3>
+        <p>
+          Personal data may be processed only insofar as this is necessary to establish, manage, or modify
+          a legitimate relationship with a website user, course participant, organisation, or collaborating party.
+          Where training registration, service administration, or contractual engagement takes place, relevant data
+          may be used only to the extent required for that purpose.
+        </p>
+
+        <h3>Payments and online transactions</h3>
+        <p>
+          The website does not currently operate an online payment or e-commerce checkout system. If payment,
+          subscription, or contract functionality is added in future, this notice should be updated to reflect how
+          payment details or contractual data are handled.
+        </p>
+
+        <h3>Newsletters and marketing communication</h3>
+        <p>
+          The website does not currently operate a public newsletter sign-up. If a newsletter or marketing subscription
+          function is introduced later, an updated privacy notice should explain what data are collected,
+          how consent is obtained, and how users may unsubscribe.
+        </p>
+
+        <h3>Social media links</h3>
+        <p>
+          The website may contain links to social media platforms such as Facebook, Twitter/X, and Instagram.
+          These are external services. When you click those links, you leave the Mawonga Training website and
+          become subject to the privacy and data handling practices of the relevant third-party platform.
+        </p>
+
+        <h3>Analytics and third-party tools</h3>
+        <p>
+          This website does not currently present a dedicated analytics or advertising implementation in the page
+          structure now available. If analytics, advertising, newsletter, or similar third-party tracking tools
+          are introduced in future, this notice should be updated to describe them clearly.
+        </p>
+
+        <h3>Google Maps</h3>
+        <p>
+          Where Google Maps is embedded or linked on the website, Google may process technical data such as your
+          IP address in order to provide the map service. Mawonga Training does not control how Google handles that
+          information once it is transmitted to Google systems. Further information can be found in Google's own
+          privacy documentation.
+        </p>
+        <ul>
+          <li>Website content is provided for general informational and educational purposes.</li>
+          <li>Course outlines, descriptions, and training summaries may change as programmes develop.</li>
+          <li>External links to partner organisations or third-party services are provided for convenience and do not automatically imply full control over external content.</li>
+          <li>Unless otherwise stated, website content, branding, and training-related presentation material remain the intellectual property of Mawonga Training or the relevant rights holder.</li>
+          <li>Unauthorised copying, misrepresentation, or commercial reuse of site content may be restricted.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-block" id="training-disclaimer">
+      <div class="wrap">
+        <span class="section-kicker">Training Disclaimer</span>
+        <h2>This is a medical training website, not a patient-care instruction channel.</h2>
+        <p>
+          Mawonga Training provides educational content for healthcare workers, professional development,
+          and system-strengthening purposes. Training material on this website does not replace patient-specific
+          assessment, clinical judgement, regulatory requirements, or the responsibility of licensed professionals
+          to practise within their scope and according to applicable standards.
+        </p>
+        <ul>
+          <li>Training material should not be treated as individual medical advice for a patient or member of the public.</li>
+          <li>Participation in a course does not create a clinician-patient relationship with Mawonga Training, Dr Mukudu &amp; Partners, or any collaborating organisation.</li>
+          <li>Healthcare professionals remain responsible for their own decisions, supervision requirements, documentation standards, and legal or ethical obligations in practice.</li>
+          <li>If you need emergency help or urgent clinical intervention, do not use this website as an emergency contact channel.</li>
+        </ul>
+
+        <h3>Professional scope and responsibility</h3>
+        <p>
+          The educational content of Mawonga Training is intended to support healthcare workers and strengthen health
+          systems. It is not a substitute for statutory guidance, employer policy, professional council requirements,
+          or the applicable standards of supervised clinical practice.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-block" id="contact-compliance">
+      <div class="wrap">
+        <span class="section-kicker">Contact</span>
+        <h2>Questions about privacy, compliance, or professional use.</h2>
+        <p>
+          For privacy, legal, training, or compliance-related questions, contact Mawonga Training directly:
+          <a href="mailto:info@mawongatraining.co.za">info@mawongatraining.co.za</a>,
+          <a href="tel:+27116131141">+27 11 613 1141</a>, or
+          <a href="tel:+27798821845">+27 79 882 1845</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-panel">
+        <div class="footer-brand">
+          <img class="mark" src="/images/MawongaT.png" alt="Mawonga Training logo">
+          <strong>Mawonga Training</strong>
+          <p>Clinical and entrepreneurial growth for healthcare professionals.</p>
+        </div>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/about/">About Us</a>
+          <a href="#privacy-policy">Privacy Policy</a>
+          <a href="#data-protection">POPIA &amp; Data Protection</a>
+          <a href="#terms-of-use">Terms of Use</a>
+          <a href="#training-disclaimer">Training Disclaimer</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+          <a href="https://twitter.com/" target="_blank" rel="noreferrer">Twitter</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+        <div class="footer-contact">
+          <span>29 Landor Street, Tulisa Park, South Hills JHB 2197</span>
+          <a href="tel:+27116131141">Phone: +27 11 613 1141</a>
+          <a href="tel:+27798821845">Mobile: +27 79 882 1845</a>
+          <a href="mailto:info@mawongatraining.co.za">Email: info@mawongatraining.co.za</a>
+        </div>
+      </div>
+      <p class="note">Mawonga Training legal and compliance information for website use and professional training engagement.</p>
+    </div>
+  </footer>
+
+  <script>
+    function normalizePageLinks() {
+      const { protocol, href, origin, pathname } = window.location;
+      const baseHref = protocol === "file:"
+        ? href.slice(0, href.lastIndexOf("/") + 1)
+        : pathname.endsWith("/")
+          ? href
+          : /\.html?$/i.test(pathname)
+            ? href.slice(0, href.lastIndexOf("/") + 1)
+            : `${origin}${pathname}/`;
+
+      document.querySelectorAll('a[href]').forEach((link) => {
+        const rawHref = link.getAttribute("href");
+        if (!rawHref || rawHref.startsWith("#") || rawHref.startsWith("mailto:") || rawHref.startsWith("tel:") || /^[a-z][a-z0-9+.-]*:/i.test(rawHref)) {
+          return;
+        }
+        if (!rawHref.includes(".html")) {
+          return;
+        }
+        link.setAttribute("href", new URL(rawHref.replace(/^\.\//, ""), baseHref).href);
+      });
+    }
+
+    normalizePageLinks();
+
+    const nav = document.querySelector(".nav");
+    const menu = document.querySelector(".menu");
+    const navLinks = nav.querySelectorAll("a");
+    const navGroups = document.querySelectorAll(".nav-group");
+    const navParents = document.querySelectorAll(".nav-parent");
+
+    function setMenu(open) {
+      nav.dataset.open = String(open);
+      menu.setAttribute("aria-expanded", String(open));
+      if (!open) {
+        navGroups.forEach((group) => {
+          group.classList.remove("open");
+          const trigger = group.querySelector(".nav-parent");
+          if (trigger) {
+            trigger.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+    }
+
+    function syncNavState() {
+      nav.classList.toggle("is-scrolled", window.scrollY > 36);
+    }
+
+    function setGroupState(group, open) {
+      group.classList.toggle("open", open);
+      const trigger = group.querySelector(".nav-parent");
+      if (trigger) {
+        trigger.setAttribute("aria-expanded", String(open));
+      }
+    }
+
+    function closeOtherGroups(currentGroup) {
+      navGroups.forEach((group) => {
+        if (group !== currentGroup) {
+          setGroupState(group, false);
+        }
+      });
+    }
+
+    menu.addEventListener("click", () => setMenu(nav.dataset.open !== "true"));
+    navLinks.forEach((link) => link.addEventListener("click", () => setMenu(false)));
+
+    navParents.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const group = trigger.closest(".nav-group");
+        const willOpen = !group.classList.contains("open");
+        closeOtherGroups(group);
+        setGroupState(group, willOpen);
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!nav.contains(event.target)) {
+        closeOtherGroups(null);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeOtherGroups(null);
+        setMenu(false);
+      }
+    });
+
+    window.addEventListener("scroll", syncNavState, { passive: true });
+    syncNavState();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
