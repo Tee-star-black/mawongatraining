@@ -644,3 +644,74 @@ img,picture{max-width:100%}
  .knowledge-track{touch-action:pan-x pan-y}
 }
 @media(max-width:900px) and (orientation:landscape){.site-header nav{max-height:calc(100dvh - 85px)}.hero-visual{min-height:340px}}
+
+/* Bold brand contrast: keep long course content on light reading surfaces. */
+:root{--deep-panel:#163e5b;--orange-panel:#a74920}
+.pathway-icon{stroke-width:4.5;width:50px;height:50px}
+.pathway-icon .icon-detail{stroke:var(--paper);stroke-width:2.5}
+.button span,.text-link span,.nav-cta span,.expand-mark,.menu-toggle span,.carousel-controls button{font-weight:700}
+.learning-ribbon{background:var(--orange-panel);color:white;border-color:#ffffff30}
+.learning-ribbon>a{border-color:#ffffff35;font-weight:600}
+.learning-ribbon .pathway-icon,.learning-ribbon>a>span:last-child{color:white}
+.learning-ribbon>a:hover{background:#873817}
+.knowledge-carousel{background:var(--deep-panel);color:white}
+.knowledge-carousel .section-heading>p,.carousel-hint{color:#d7e5ef}
+.knowledge-card{color:var(--ink);border-top-width:6px;box-shadow:10px 14px 0 #ffffff0c,0 20px 30px #00000020}
+.knowledge-card:nth-child(2){background:var(--orange-panel);color:white;border-color:var(--copper)}
+.knowledge-card:nth-child(3){background:var(--blue);color:white;border-color:#b6cee1}
+.knowledge-card:nth-child(2) p,.knowledge-card:nth-child(3) p{color:#fff}
+.knowledge-card:nth-child(2) .pathway-icon,.knowledge-card:nth-child(3) .pathway-icon{color:white}
+.knowledge-card:nth-child(2) .icon-detail,.knowledge-card:nth-child(3) .icon-detail{stroke:var(--navy)}
+.knowledge-card-top .pathway-icon{width:66px;height:66px}
+.knowledge-card:nth-child(2) .text-link:hover,.knowledge-card:nth-child(3) .text-link:hover{color:#fff}
+.carousel-controls button{color:var(--navy)}
+.carousel-controls button:hover{background:var(--orange-panel);color:white;border-color:var(--copper)}
+.programme-tabs button[aria-pressed="true"]{background:var(--orange-panel)}
+.programme-detail>.pathway-icon{width:65px;height:65px}
+.learning-process{background:var(--deep-panel);color:white}
+.learning-process .section-heading>p,.learning-process .process-track p{color:#d7e5ef}
+.learning-process .section-number{color:var(--copper)}
+.learning-process .process-node{background:var(--deep-panel);color:white;border-color:#a4c2d8}
+.learning-process.is-visible .process-node{background:var(--orange-panel);border-color:var(--copper)}
+.learning-process .process-track::before{background:#ffffff35}
+.learning-process .process-track::after{background:var(--copper);width:2px}
+.process-visual>span{background:var(--orange-panel)}
+.partner-band{background:#d8e5f0}
+.network-opening{background:var(--deep-panel)}
+.network-roles,.page-partners .partner-directory{grid-template-columns:repeat(2,minmax(0,1fr))}
+.network-image{background:var(--navy)}
+.network-image img{height:330px;object-fit:cover;object-position:55% center}
+.page-partners .partner-directory article{border-top-width:5px}
+.final-cta{background:var(--orange-panel)}
+.final-cta p{color:white}
+.final-cta .button{background:var(--deep-panel);color:white;border-color:white}
+.final-cta .button:hover{background:white;color:var(--navy);border-color:white}
+.ethics-opening{background:var(--orange-panel);color:white}
+.ethics-title em{color:var(--copper)}
+.ethics-layout p{color:white}
+.ethics-principles a{border-color:#ffffff50}
+.ethics-principles a>span:first-child{color:var(--copper)}
+.ethics-principles a:hover{color:var(--copper)}
+.ethics-opening .button{background:white;color:var(--navy);border-color:white}
+.ethics-opening .button:hover{background:var(--deep-panel);color:white}
+.prospectus-opening{background:var(--deep-panel);color:white}
+.prospectus-opening h1 em{color:var(--copper)}
+.prospectus-opening>div>p{color:#d7e5ef}
+.prospectus-opening aside>strong{color:white}
+.prospectus-opening aside{border-color:#ffffff40}
+.prospectus-opening aside .text-link:hover{color:var(--copper)}
+.lab-orientation{background:var(--orange-panel);color:white}
+.lab-orientation p{color:white}
+.lab-orientation article{border-color:#ffd5b8}
+.lab-orientation article>span{color:#ffe1cb}
+.page-course-prospectus .stream-directory{background:var(--deep-panel)}
+.page-course-prospectus .course-group{border-top:6px solid var(--blue)}
+.page-course-prospectus .course-group:nth-child(even){border-top-color:var(--orange-panel)}
+@media(max-width:760px){
+ .network-roles,.page-partners .partner-directory{grid-template-columns:minmax(0,1fr)}
+ .network-image img{height:260px}
+ .learning-ribbon .pathway-icon{width:40px;height:40px}
+ .knowledge-card-top .pathway-icon{width:54px;height:54px}
+ .programme-detail>.pathway-icon{width:56px;height:56px}
+}
+@media print{.knowledge-carousel,.learning-process,.ethics-opening,.prospectus-opening,.lab-orientation{background:white;color:black}.knowledge-card:nth-child(n){background:white;color:black}.knowledge-card p,.learning-process p,.ethics-opening p,.lab-orientation p,.prospectus-opening p{color:black}}

@@ -38,3 +38,8 @@ test('all used image assets are reachable through the preview handler',async()=>
   const res=await request('/assets/'+file);assert.equal(res.status,200);assert.equal(res.headers['Content-Type'],'image/webp');assert.ok(res.body.length>1000);
  }
 });
+
+test('removed partner branding and legacy artwork are absent from public routes',async()=>{
+ for(const page of ['/','/partners/'])assert.doesNotMatch((await request(page)).body.toString(),/medkulula|partner-03/i);
+ for(const asset of ['/assets/mawonga-medkulula.webp','/images/MedKulula.png','/assets/mawonga-partnership.webp','/images/Partnership.png'])assert.equal((await request(asset)).status,404,asset);
+});
