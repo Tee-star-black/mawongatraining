@@ -317,3 +317,8 @@ p{line-height:1.75}
 .stream-jump{display:none}
 html.js .stream-jump{display:grid}
 @media(max-width:600px){html.js .stream-jump{display:flex}}
+
+/* The base panel selector is intentionally specific; preserve absolute artwork placement. */
+.programme-panel>.panel-art{position:absolute;right:0;top:0;width:43%;height:100%;z-index:0;pointer-events:none;overflow:hidden}
+@media(max-width:1150px){.programme-panel>.panel-art{width:40%}}
+@media(max-width:600px){.programme-panel>.panel-art{width:45%}}
