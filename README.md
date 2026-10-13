@@ -1,6 +1,6 @@
 # Mawonga Training
 
-A responsive rebuild of the Mawonga Training website, using the supplied website content and real workshop photographs. Blue, warm white and orange styling with sharp geometry, programme discovery and a searchable course prospectus.
+A responsive rebuild of the Mawonga Training website, using the supplied website content and real workshop photographs. Brand-blue, navy, copper and warm white styling with sharp geometry, programme discovery and a searchable course prospectus.
 
 ## Run locally
 
@@ -18,7 +18,10 @@ Open **http://localhost:3000**. This preview resolves the clean page URLs and re
 - `scripts/build.mjs`: page content, shared navigation, footer, metadata and schema.
 - `content/courses.json`: the 15 existing prospectus courses, modules, activities, durations and indicative fees.
 - `content/privacy.html`: preserved privacy, terms and professional disclaimer copy.
-- `assets/site.css`: responsive design, focus styles and reduced-motion support.
+- `assets/site.css`: original responsive design, focus styles and reduced-motion support.
+- `assets/design-v2.css`: refined brand-blue/copper identity, uncommon sans-serif typography, mobile-friendly editorial page compositions.
+- `assets/design-v2.js`: grouped course controls and subtle reduced-motion-aware reveals.
+- `scripts/visual-refresh.mjs`: source for the page-specific visual treatments; the normal build generates all final HTML.
 - `assets/site.js`: mobile menu, programme selector and prospectus search/filter/reset.
 - `assets/workshop-*.webp`: optimised copies of the three supplied workshop photos. Original images remain in `images/`.
 
@@ -28,7 +31,7 @@ npm run check
 npm test
 ```
 
-The build writes HTML files, `sitemap.xml` and `robots.txt` to the repository root. Edit source files and rebuild rather than editing generated pages directly. Course information remains available without JavaScript; interactive filtering is a progressive enhancement.
+The build writes HTML files, `sitemap.xml` and `robots.txt` to the repository root. Edit source files and rebuild rather than editing generated pages directly. All 15 prospectus courses remain available in six clearly labelled groups without JavaScript. Interactive filtering is a progressive enhancement.
 
 ## Pages and hosting
 
