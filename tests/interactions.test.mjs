@@ -13,7 +13,7 @@ class Element {
   focus(){this.focused=true;}
   click(){this.fire('click');}
 }
-function setup(query='',reducedMotion=false) {
+function setup(query='',reducedMotion=false,carousel=false) {
   const classes=new Set();
   const nav=new Element();nav.classList={add:x=>classes.add(x),remove:x=>classes.delete(x),toggle:(x,on)=>on?classes.add(x):classes.delete(x)};nav.contains=el=>el===nav;
   const menu=new Element({attrs:{'aria-expanded':'false'}});
@@ -30,13 +30,18 @@ function setup(query='',reducedMotion=false) {
   });
   const streamLinks=streamIds.map(id=>new Element({dataset:{streamLink:id}}));
   const reset=new Element(),count=new Element(),empty=new Element();
+  const track=new Element(),previous=new Element(),next=new Element(),position=new Element(),controls=new Element();
+  const cards=Array.from({length:4},(_,i)=>{const card=new Element();card.offsetLeft=i*360;card.offsetWidth=340;card.style={setProperty(){},removeProperty(){}};return card;});
+  track.querySelectorAll=()=>cards;track.clientWidth=600;track.scrollLeft=0;
+  track.scrollTo=options=>{track.lastScroll=options;track.scrollLeft=options.left;};
   const motion=new Element();const rootClasses=new Set();
   const elements={'.menu-toggle':menu,'#primary-nav':nav,'.nav-courses':dropdown,'#course-search':search,'#stream-filter':select,'.motion-toggle':motion,'.filter-reset':reset,'#course-count':count,'#course-empty':empty};
+  if(carousel) Object.assign(elements,{'.knowledge-track':track,'.carousel-controls':controls,'.carousel-position':position,'[data-carousel-prev]':previous,'[data-carousel-next]':next});
   const doc=new Element();doc.documentElement={classList:{add:x=>rootClasses.add(x),toggle:(x,on)=>on?rootClasses.add(x):rootClasses.delete(x)}};doc.activeElement=nav;
   doc.querySelector=s=>elements[s]||null;
   doc.querySelectorAll=s=>({'[data-programme]':buttons,'.programme-panel':panels,'.catalogue-course':courses,'[data-course-group]':groups,'[data-stream-link]':streamLinks}[s]||[]);
   vm.runInNewContext(read('assets/site.js'),{document:doc,window:{location:{search:query},matchMedia:()=>({matches:reducedMotion,addEventListener(){}})},URLSearchParams});
-  return {doc,menu,nav,classes,buttons,panels,courses,search,select,reset,count,empty,motion,rootClasses,groups,groupLabels,streamLinks};
+  return {doc,menu,nav,classes,buttons,panels,courses,search,select,reset,count,empty,motion,rootClasses,groups,groupLabels,streamLinks,track,previous,next,position,controls,cards};
 }
 test('pathway selection presents the selected course and updates all pressed states',()=>{
  const s=setup();s.buttons[2].fire('click');
@@ -101,4 +106,18 @@ test('learning stream navigation clears a stale search and exposes its destinati
  assert.equal(s.count.textContent,'2');assert.equal(s.groups[3].hidden,false);
  assert.equal(s.streamLinks[3].attrs['aria-current'],'true');
  s.reset.fire('click');assert.equal(s.streamLinks[3].attrs['aria-current'],undefined);
+});
+
+test('homepage carousel advances, wraps and supports focused-track keyboard navigation',()=>{
+ const s=setup('',false,true);assert.equal(s.controls.hidden,false);
+ s.next.fire('click');assert.equal(s.track.lastScroll.left,360);assert.equal(s.position.textContent,'02 / 04');
+ s.previous.fire('click');s.previous.fire('click');assert.equal(s.track.lastScroll.left,1080);assert.equal(s.position.textContent,'04 / 04');
+ s.track.fire('keydown',{key:'ArrowRight',target:s.track,preventDefault(){}});
+ assert.equal(s.track.lastScroll.left,0);assert.equal(s.position.textContent,'01 / 04');
+ s.track.fire('keydown',{key:'ArrowRight',target:s.cards[0],preventDefault(){throw new Error('Should not intercept link navigation');}});
+ assert.equal(s.track.lastScroll.left,0);
+});
+test('carousel obeys reduced motion and manual scrolling updates its position',()=>{
+ const s=setup('',true,true);s.next.fire('click');assert.equal(s.track.lastScroll.behavior,'auto');
+ s.track.scrollLeft=700;s.track.fire('scrollend');assert.equal(s.position.textContent,'03 / 04');
 });

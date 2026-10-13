@@ -96,6 +96,54 @@
     });
   });
 
+  const track = document.querySelector('.knowledge-track');
+  if (track) {
+    const cards = [...track.querySelectorAll('.knowledge-card')];
+    const controls = document.querySelector('.carousel-controls');
+    const position = document.querySelector('.carousel-position');
+    let active = 0;
+    const announce = () => {
+      if (position) position.textContent = `${String(active + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
+    };
+    const move = direction => {
+      if (!cards.length) return;
+      active = (active + direction + cards.length) % cards.length;
+      track.scrollTo({ left: cards[active].offsetLeft - cards[0].offsetLeft, behavior: motionPaused ? 'auto' : 'smooth' });
+      announce();
+    };
+    if (controls) controls.hidden = false;
+    document.querySelector('[data-carousel-prev]')?.addEventListener('click', () => move(-1));
+    document.querySelector('[data-carousel-next]')?.addEventListener('click', () => move(1));
+    track.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight'].includes(event.key) || event.target !== track) return;
+      event.preventDefault();move(event.key === 'ArrowRight' ? 1 : -1);
+    });
+    // Manual swipe updates the selected card once scrolling settles.
+    track.addEventListener('scrollend', () => {
+      const centre = track.scrollLeft + track.clientWidth / 2;
+      let best = Infinity;
+      cards.forEach((card, index) => {
+        const distance = Math.abs(card.offsetLeft - cards[0].offsetLeft + card.offsetWidth / 2 - centre);
+        if (distance < best) { best = distance; active = index; }
+      });
+      announce();
+    });
+    cards.forEach(card => {
+      card.addEventListener('pointermove', event => {
+        if (motionPaused || event.pointerType !== 'mouse') return;
+        const bounds = card.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+        card.style.setProperty('--tilt-x', `${-y * 5}deg`);
+        card.style.setProperty('--tilt-y', `${x * 5}deg`);
+      });
+      card.addEventListener('pointerleave', () => {
+        card.style.removeProperty('--tilt-x');card.style.removeProperty('--tilt-y');
+      });
+    });
+    announce();
+  }
+
   const search = document.querySelector('#course-search');
   const select = document.querySelector('#stream-filter');
   const entries = [...document.querySelectorAll('.catalogue-course')];

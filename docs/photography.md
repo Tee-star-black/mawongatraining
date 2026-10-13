@@ -26,3 +26,5 @@ The original images in images/ are now used on the appropriate pages. Resized We
 | MawongaT.png | mawonga-brand.webp | About page brand signature |
 
 The original mawonga logo.png remains the source of the existing shared logo.webp. IMAGE 1.jpeg, IMAGE 2.jpeg and IMAGE 3.jpeg remain visible as workshop-1.webp, workshop-2.webp and workshop-3.webp. The dummy placeholder is not published as page imagery. Supplied clinical and ethics artwork is described as illustration, rather than as a photograph of a Mawonga event.
+
+Shared header/footer identity and favicon now use mawonga-primary-logo.webp, a 320px optimisation of the requested images/mawonga logo.png. The original is retained unchanged.

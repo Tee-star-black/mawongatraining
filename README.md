@@ -46,7 +46,7 @@ This repository change does not deploy the live domain. It also does not submit 
 
 See `docs/seo-implementation.md` for the supplied SEO guide review and implementation decisions. Automated checks cover page links and fragments, asset existence, metadata, JSON-LD, course count and sitemap coverage. Tests cover route handling, legacy redirects, images, restricted runtime files and browser interaction logic.
 
-Automated checks and 14 tests pass. A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.
+Automated checks and 16 tests pass. A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.
 
 ## Creative direction and motion
 
@@ -61,3 +61,9 @@ The footer provides a Pause motion / Enable motion control. Reduced-motion prefe
 Typography uses upright Schibsted Grotesk throughout, with Arial as a fallback. Logo-derived blue, slate and orange share a consistent identity; darker orange is used for readable text. Page openings differ by purpose: clinical skills and image-led field notes; ethics principles and patient communication; entrepreneurship and operating priorities; workshop-led About; a role-based partner directory; practical Contact details; a quiet legal reference page.
 
 The prospectus groups all 15 courses into six learning streams, each with a heading, explanation and course count. The directory links focus a category and scroll to its visible group. Search matches course descriptions, modules and activities; empty groups disappear, matching counts update, and reset restores all groups. No-JavaScript browsing retains all six groups and 15 course accordions. Fees that are not supplied as a rand amount are labelled Fee on enquiry instead of presenting the original module count as a price.
+
+## Learning lab and homepage carousel
+
+The requested mawonga logo.png is used as the shared header/footer logo, favicon and organisation logo through an optimised WebP copy. Page headings are centred. The prospectus uses a laboratory-inspired illustration, a fine measurement grid, six learning stations and a short orientation guide. Every course explains why it matters using the existing description, topics and activities. This is a visual metaphor for course discovery, not a claim about laboratory facilities or accreditation.
+
+The homepage information carousel uses CSS perspective, subtle pointer tilt and scroll snapping. Arrow buttons, track arrow keys and native touch scrolling move between the four information cards. Card links remain ordinary navigable links, and all information is available without JavaScript. Motion pause/reduced-motion preferences disable tilt and smooth scrolling; there is no forced automatic rotation.

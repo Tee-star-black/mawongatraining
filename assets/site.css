@@ -517,3 +517,68 @@ html.motion-paused{scroll-behavior:auto}
 .about-signature img{width:75px;height:75px;object-fit:contain}
 .about-signature span{font-size:12px;color:var(--muted)}
 @media(max-width:760px){.ethics-layout{grid-template-columns:1fr}.network-image{margin-top:28px;border-width:4px}.network-image img{max-height:none}.ethics-layout img{height:auto}.about-signature img{width:60px;height:60px}.about-signature span{font-size:11px}}
+
+/* The supplied logo is the shared identity, without a duplicate text lockup. */
+.brand img{width:76px;height:75px;object-fit:contain}
+.site-header{padding-top:10px;padding-bottom:10px}
+.site-footer .brand img{width:100px;height:98px}
+/* Centre every page heading while retaining readable left-aligned body copy. */
+h1,h2,h3{text-align:center}
+.section-heading{flex-direction:column;align-items:center;text-align:center;gap:22px}
+.section-heading>p{max-width:550px}
+.hero-copy>.eyebrow,.hero-actions,.hero-note{justify-content:center}
+.hero-copy>p{margin-left:auto;margin-right:auto;text-align:center}
+.hero-copy>.hero-scroll{margin-left:auto;margin-right:auto}
+.clinical-opening>div>.eyebrow,.ethics-title>.eyebrow,.business-opening>div>.eyebrow,.about-opening>div>.eyebrow,.contact-opening>div>.eyebrow{text-align:center}
+.curriculum summary h3{flex:1}
+.course-group-heading>div{text-align:center}
+.course-summary h3{width:100%}
+.final-cta>div:first-child>.eyebrow{text-align:center}
+.knowledge-carousel{padding:65px var(--gutter) 45px;background:#e8eef5;border-bottom:1px solid var(--line);overflow:hidden}
+.knowledge-track{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:32px 12px 40px;perspective:1100px;scrollbar-width:thin;scrollbar-color:var(--blue) #d6e2ed}
+.knowledge-card{position:relative;flex:0 0 min(68%,560px);scroll-snap-align:start;min-width:0;padding:32px;background:white;border:1px solid #b8cbdc;border-top:4px solid var(--brand-orange);box-shadow:9px 12px 0 #bfd0e040,0 18px 28px #234c6d12;transform-style:preserve-3d;transition:transform .35s var(--ease),box-shadow .35s;will-change:auto}
+.knowledge-card:hover,.knowledge-card:focus-within{transform:translateY(-8px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));box-shadow:12px 18px 0 #bfd0e060,0 24px 35px #234c6d20}
+.knowledge-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.knowledge-card h3{font-size:34px;margin:18px 0;transform:translateZ(12px)}
+.knowledge-card p{font-size:14px;line-height:1.85;min-height:80px}
+.knowledge-card .text-link{margin-top:20px}
+.carousel-controls{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:15px}
+.carousel-controls button{width:48px;height:48px;background:white;border:1px solid #a6bed2;font-size:24px}
+.carousel-controls button:hover{background:var(--blue);color:white}
+.carousel-position{font-size:11px;letter-spacing:.1em;min-width:60px;text-align:center}
+.carousel-hint{font-size:10px;color:var(--muted);margin-left:10px}
+/* Laboratory-inspired browsing: station markers, a fine measurement grid and clear labels. */
+.page-course-prospectus{background:#eef3f8}
+.prospectus-opening{position:relative;grid-template-columns:1.5fr .7fr;background:#e8eef5;padding-bottom:0}
+.prospectus-opening>.lab-window{grid-column:1/-1;position:relative;max-width:100%;margin:10px 0 0;border:10px solid white;box-shadow:0 15px 30px #234c6d15}
+.lab-window img{height:295px;object-fit:cover;object-position:center 54%}
+.lab-window figcaption{position:absolute;bottom:0;left:0;right:0;background:var(--navy);color:white;font-size:10px;letter-spacing:.1em;text-align:center;padding:14px}
+.prospectus-opening>div>.eyebrow{text-align:center}
+.lab-orientation{padding:45px var(--gutter);background:#e8eef5}
+.lab-orientation h2{font-size:30px;margin-bottom:28px}
+.lab-orientation>div{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.lab-orientation article{border-top:2px solid var(--brand-orange);padding-top:18px}
+.lab-orientation article>span{font-size:9px;letter-spacing:.12em;color:var(--blue)}
+.lab-orientation p{font-size:13px;margin-top:12px;line-height:1.8}
+.page-course-prospectus .stream-directory{background:#e8eef5}
+.page-course-prospectus .catalogue-section{background-color:#eef3f8;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M28 0H0V28' fill='none' stroke='%2336658b' stroke-opacity='.035'/%3E%3C/svg%3E");background-size:28px 28px}
+.page-course-prospectus .catalogue-tools{padding:25px;background:white;border:1px solid #c5d5e3}
+.course-group{padding:25px;background:#fff;border:1px solid #c5d5e3;box-shadow:6px 6px 0 #dbe6ef;position:relative}
+.course-group-heading{border-top:0;padding-top:8px}
+.course-group-heading .stream-audience{font-size:12px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);color:var(--ink)}
+.course-context{grid-column:1/-1;background:white;border-left:3px solid var(--brand-orange);padding:20px 24px}
+.course-context h3{font-size:22px;margin-bottom:14px}
+.course-context p{font-size:14px;line-height:1.85;max-width:800px;margin:auto}
+@media(max-width:900px){.brand img{width:65px;height:64px}.knowledge-card{flex-basis:76%}.course-group{padding:20px}}
+@media(max-width:760px){
+ .site-header{padding-top:10px;padding-bottom:10px}.brand img{width:60px;height:59px}
+ .home-hero .hero-actions{align-items:center;justify-content:center}.hero-note{justify-content:center}
+ .knowledge-carousel{padding:45px var(--gutter) 30px}.knowledge-track{gap:20px;padding:25px 8px 32px}.knowledge-card{flex-basis:92%;padding:24px}.knowledge-card h3{font-size:29px}.knowledge-card p{min-height:0;font-size:13px}.carousel-hint{display:none}
+ .prospectus-opening>.lab-window{grid-column:1;margin-top:0;border-width:5px}.lab-window img{height:240px}.lab-window figcaption{font-size:8px;padding:12px}
+ .lab-orientation{padding:35px var(--gutter)}.lab-orientation h2{font-size:27px}.lab-orientation>div{grid-template-columns:1fr;gap:22px}.lab-orientation article{padding-top:14px}.lab-orientation p{margin-top:8px}
+ .page-course-prospectus .catalogue-tools{padding:20px}.course-group{padding:18px;box-shadow:4px 4px 0 #dbe6ef}.course-group-heading{grid-template-columns:30px 1fr;gap:12px}.course-group-heading h2{font-size:25px}.catalogue-course summary{gap:10px}.course-summary h3{font-size:23px}.course-context{padding:18px}.course-context h3{font-size:21px}
+}
+@media(prefers-reduced-motion:reduce){html:not(.motion-enabled) .knowledge-card{transform:none}html:not(.motion-enabled) .knowledge-track{scroll-behavior:auto}}
+.motion-paused .knowledge-card{transform:none}
+.motion-paused .knowledge-track{scroll-behavior:auto}
+@media print{.carousel-controls{display:none}.knowledge-track{display:block;overflow:visible}.knowledge-card{break-inside:avoid;box-shadow:none;margin-bottom:20px;transform:none}.lab-window{display:none}.course-group{box-shadow:none}.page-course-prospectus .catalogue-section{background:white}}
