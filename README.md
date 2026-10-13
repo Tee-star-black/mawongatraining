@@ -1,6 +1,6 @@
 # Mawonga Training
 
-A responsive rebuild of the Mawonga Training website, using the supplied website content and real workshop photographs. Blue, warm white and orange styling with sharp geometry, programme discovery and a searchable course prospectus.
+A responsive rebuild of the Mawonga Training website, using the supplied website content and real workshop photographs. Blue, warm white and orange styling with clinical line illustrations, workshop field notes, programme discovery and a searchable course prospectus.
 
 ## Run locally
 
@@ -19,7 +19,7 @@ Open **http://localhost:3000**. This preview resolves the clean page URLs and re
 - `content/courses.json`: the 15 existing prospectus courses, modules, activities, durations and indicative fees.
 - `content/privacy.html`: preserved privacy, terms and professional disclaimer copy.
 - `assets/site.css`: responsive design, focus styles and reduced-motion support.
-- `assets/site.js`: mobile menu, programme selector and prospectus search/filter/reset.
+- `assets/site.js`: mobile menu, keyboard-accessible programme selector, prospectus search/filter/reset, scroll reveals and motion controls.
 - `assets/workshop-*.webp`: optimised copies of the three supplied workshop photos. Original images remain in `images/`.
 
 ```powershell
@@ -44,4 +44,12 @@ This repository change does not deploy the live domain. It also does not submit 
 
 See `docs/seo-implementation.md` for the supplied SEO guide review and implementation decisions. Automated checks cover page links and fragments, asset existence, metadata, JSON-LD, course count and sitemap coverage. Tests cover route handling, legacy redirects, images, restricted runtime files and browser interaction logic.
 
-A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.
+Automated checks and 12 tests pass. A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.
+
+## Creative direction and motion
+
+The homepage follows purpose → programmes → courses by goal → learning in practice → facilitators → partners → enquiry. Clinical care, ethical judgement and practice growth each have a custom SVG illustration. A pulse line in the workshop photograph and a connected learning path relate the motion to the training content.
+
+Programme changes use a short entrance transition. Section reveals run once as content enters the viewport, and supported browsers fade between pages using native view transitions. Navigation is ordinary links; unsupported browsers use normal page loads. Mobile layouts stack programme buttons with full labels and at least 44px targets, and turn the learning path vertical.
+
+The footer provides a Pause motion / Enable motion control. Reduced-motion preferences disable animation and smooth scrolling automatically; settings can be overridden for the current page. Content remains available when JavaScript or IntersectionObserver is unavailable. No animation or UI dependency is required.

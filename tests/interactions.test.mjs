@@ -10,8 +10,9 @@ class Element {
   setAttribute(name,value){this.attrs[name]=value;}
   getAttribute(name){return this.attrs[name];}
   focus(){this.focused=true;}
+  click(){this.fire('click');}
 }
-function setup(query='') {
+function setup(query='',reducedMotion=false) {
   const classes=new Set();
   const nav=new Element();nav.classList={add:x=>classes.add(x),remove:x=>classes.delete(x),toggle:(x,on)=>on?classes.add(x):classes.delete(x)};nav.contains=el=>el===nav;
   const menu=new Element({attrs:{'aria-expanded':'false'}});
@@ -21,12 +22,13 @@ function setup(query='') {
   const courses=[...read('course-prospectus.html').matchAll(/<details class="catalogue-course"[^>]*data-stream="([^"]+)">(.*?)<\/details>/gs)].map(m=>new Element({textContent:m[2].replace(/<[^>]+>/g,' '),dataset:{stream:m[1]}}));
   const search=new Element(),select=new Element();select.value='all';select.options=['all','practice','business','marketing','leadership','digital','me'].map(value=>({value}));
   const reset=new Element(),count=new Element(),empty=new Element();
-  const elements={'.menu-toggle':menu,'#primary-nav':nav,'.nav-courses':dropdown,'#course-search':search,'#stream-filter':select,'.filter-reset':reset,'#course-count':count,'#course-empty':empty};
-  const doc=new Element();doc.documentElement={classList:{add(){}}};doc.activeElement=nav;
+  const motion=new Element();const rootClasses=new Set();
+  const elements={'.menu-toggle':menu,'#primary-nav':nav,'.nav-courses':dropdown,'#course-search':search,'#stream-filter':select,'.motion-toggle':motion,'.filter-reset':reset,'#course-count':count,'#course-empty':empty};
+  const doc=new Element();doc.documentElement={classList:{add:x=>rootClasses.add(x),toggle:(x,on)=>on?rootClasses.add(x):rootClasses.delete(x)}};doc.activeElement=nav;
   doc.querySelector=s=>elements[s]||null;
   doc.querySelectorAll=s=>({'[data-programme]':buttons,'.programme-panel':panels,'.catalogue-course':courses}[s]||[]);
-  vm.runInNewContext(read('assets/site.js'),{document:doc,window:{location:{search:query},matchMedia:()=>({addEventListener(){}})},URLSearchParams});
-  return {doc,menu,nav,classes,buttons,panels,courses,search,select,reset,count,empty};
+  vm.runInNewContext(read('assets/site.js'),{document:doc,window:{location:{search:query},matchMedia:()=>({matches:reducedMotion,addEventListener(){}})},URLSearchParams});
+  return {doc,menu,nav,classes,buttons,panels,courses,search,select,reset,count,empty,motion,rootClasses};
 }
 test('pathway selection presents the selected course and updates all pressed states',()=>{
  const s=setup();s.buttons[2].fire('click');
@@ -48,4 +50,27 @@ test('no results are announced and reset restores every course',()=>{
 test('mobile menu reports its state and Escape returns focus to the menu button',()=>{
  const s=setup();s.menu.fire('click');assert.equal(s.menu.attrs['aria-expanded'],'true');assert.ok(s.classes.has('is-open'));
  s.doc.fire('keydown',{key:'Escape'});assert.equal(s.menu.attrs['aria-expanded'],'false');assert.equal(s.classes.has('is-open'),false);assert.equal(s.menu.focused,true);
+});
+
+test('motion starts paused for reduced-motion users and can be explicitly changed',()=>{
+ const s=setup('',true);
+ assert.equal(s.motion.hidden,false);
+ assert.equal(s.motion.attrs['aria-pressed'],'true');
+ assert.ok(s.rootClasses.has('motion-paused'));
+ s.motion.fire('click');
+ assert.equal(s.motion.attrs['aria-pressed'],'false');
+ assert.equal(s.motion.textContent,'Pause motion');
+ assert.equal(s.rootClasses.has('motion-paused'),false);
+ s.motion.fire('click');
+ assert.equal(s.motion.textContent,'Enable motion');
+ assert.ok(s.rootClasses.has('motion-paused'));
+});
+test('keyboard pathway navigation selects, focuses and wraps between programmes',()=>{
+ const s=setup();let prevented=false;
+ s.buttons[0].fire('keydown',{key:'End',preventDefault(){prevented=true;}});
+ assert.ok(prevented);assert.ok(s.buttons[2].focused);
+ assert.deepEqual(s.panels.map(p=>p.hidden),[true,true,false]);
+ s.buttons[2].fire('keydown',{key:'ArrowRight',preventDefault(){}});
+ assert.ok(s.buttons[0].focused);
+ assert.deepEqual(s.panels.map(p=>p.hidden),[false,true,true]);
 });

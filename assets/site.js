@@ -45,6 +45,57 @@
     });
   });
 
+  // Progressive motion: never hide content if observation or motion support is absent.
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const motionToggle = document.querySelector('.motion-toggle');
+  let motionPaused = Boolean(motionPreference.matches);
+  const syncMotion = () => {
+    document.documentElement.classList.toggle('motion-paused', motionPaused);
+    document.documentElement.classList.toggle('motion-enabled', !motionPaused);
+    if (motionToggle) {
+      motionToggle.textContent = motionPaused ? 'Enable motion' : 'Pause motion';
+      motionToggle.setAttribute('aria-pressed', String(motionPaused));
+    }
+  };
+  if (motionToggle) {
+    motionToggle.hidden = false;
+    syncMotion();
+    motionToggle.addEventListener('click', () => { motionPaused = !motionPaused; syncMotion(); });
+    motionPreference.addEventListener('change', event => { motionPaused = event.matches; syncMotion(); });
+  }
+  const revealTargets = [...document.querySelectorAll('.section-heading, .story-images, .story-copy, .learning-process, .faculty-section, .outcomes-section, .values-section, .partner-directory article')];
+  if (typeof IntersectionObserver !== 'undefined') {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.remove('is-pending');
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -24px 0px' });
+    revealTargets.forEach(target => {
+      // Avoid hiding nested elements twice and allow reading before a scroll.
+      if (!motionPaused && !target.closest('.learning-process')) {
+        target.classList.add('reveal', 'is-pending');
+      }
+      observer.observe(target);
+    });
+  } else {
+    revealTargets.forEach(target => target.classList.add('is-visible'));
+  }
+
+  // Arrow keys provide quick movement through the related programme buttons.
+  pathwayButtons.forEach((button, index) => {
+    button.addEventListener('keydown', event => {
+      const direction = ['ArrowRight', 'ArrowDown'].includes(event.key) ? 1 : ['ArrowLeft', 'ArrowUp'].includes(event.key) ? -1 : 0;
+      if (!direction && !['Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const next = event.key === 'Home' ? 0 : event.key === 'End' ? pathwayButtons.length - 1 : (index + direction + pathwayButtons.length) % pathwayButtons.length;
+      pathwayButtons[next].focus();
+      pathwayButtons[next].click();
+    });
+  });
+
   const search = document.querySelector('#course-search');
   const select = document.querySelector('#stream-filter');
   const entries = [...document.querySelectorAll('.catalogue-course')];
