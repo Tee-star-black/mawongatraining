@@ -312,3 +312,8 @@ p{line-height:1.75}
 @media(prefers-reduced-motion:reduce){
   .field-gallery img,.button,.nav-cta,.contact-grid>a,.text-link,.catalogue-course summary{transition:none!important;transform:none!important}
 }
+
+.page-hero .hero-inset .hero-inset-caption{display:block;background:var(--blue);color:#fff;padding:9px 12px;font-size:10px;font-weight:600}
+.stream-jump{display:none}
+html.js .stream-jump{display:grid}
+@media(max-width:600px){html.js .stream-jump{display:flex}}
