@@ -1,6 +1,6 @@
 # Mawonga Training
 
-A responsive rebuild of the Mawonga Training website, using the supplied website content, real workshop photographs and licensed clinical photography. A navy, white and copper identity with expansive photographic heroes, layered workshop compositions, photographic programme panels and a searchable course prospectus.
+A responsive rebuild of the Mawonga Training website, using the supplied website content, real workshop photographs and licensed clinical photography. An identity drawn from the logo’s blue, slate and orange with expansive photographic heroes, layered workshop compositions, photographic programme panels and a searchable course prospectus.
 
 ## Run locally
 
@@ -46,7 +46,7 @@ This repository change does not deploy the live domain. It also does not submit 
 
 See `docs/seo-implementation.md` for the supplied SEO guide review and implementation decisions. Automated checks cover page links and fragments, asset existence, metadata, JSON-LD, course count and sitemap coverage. Tests cover route handling, legacy redirects, images, restricted runtime files and browser interaction logic.
 
-Automated checks and 12 tests pass. A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.
+Automated checks and 14 tests pass. A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.
 
 ## Creative direction and motion
 
@@ -55,3 +55,9 @@ The homepage follows purpose → programmes → courses by goal → learning in 
 Programme changes use a short entrance transition. Section reveals run once as content enters the viewport, and supported browsers fade between pages using native view transitions. Navigation is ordinary links; unsupported browsers use normal page loads. Mobile layouts stack programme buttons with full labels and at least 44px targets, and use a vertical learning path. Clinical images use responsive 480px, 960px and 1920px WebP sources, with priority loading for the main hero and lazy loading for secondary photos.
 
 The footer provides a Pause motion / Enable motion control. Reduced-motion preferences disable animation and smooth scrolling automatically; settings can be overridden for the current page. Content remains available when JavaScript or IntersectionObserver is unavailable. No animation or UI dependency is required.
+
+## Page identity and grouped browsing
+
+Typography uses upright Schibsted Grotesk throughout, with Arial as a fallback. Logo-derived blue, slate and orange share a consistent identity; darker orange is used for readable text. Page openings differ by purpose: clinical skills and image-led field notes; ethics principles and patient communication; entrepreneurship and operating priorities; workshop-led About; a role-based partner directory; practical Contact details; a quiet legal reference page.
+
+The prospectus groups all 15 courses into six learning streams, each with a heading, explanation and course count. The directory links focus a category and scroll to its visible group. Search matches course descriptions, modules and activities; empty groups disappear, matching counts update, and reset restores all groups. No-JavaScript browsing retains all six groups and 15 course accordions. Fees that are not supplied as a rand amount are labelled Fee on enquiry instead of presenting the original module count as a price.

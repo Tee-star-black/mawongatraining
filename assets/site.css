@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap');
 
 /* Mawonga / clinical education. Solid colour fields, generous photography, precise type. */
-:root{--blue:#123d62;--navy:#102e45;--ink:#142e42;--orange:#b14f2d;--copper:#f1b18b;--paper:#f7f7f3;--white:#fff;--line:#d7dfe2;--muted:#526675;--display:'Manrope',Arial,sans-serif;--body:'DM Sans',Arial,sans-serif;--gutter:clamp(22px,5.5vw,100px);--ease:cubic-bezier(.22,1,.36,1)}
+:root{--blue:#36658b;--navy:#234c6d;--ink:#233d53;--orange:#a55325;--brand-orange:#cc7439;--logo-slate:#819bbc;--copper:#f3c1a0;--paper:#f7f7f3;--white:#fff;--line:#d7dfe2;--muted:#526675;--display:'Schibsted Grotesk',Arial,sans-serif;--body:'Schibsted Grotesk',Arial,sans-serif;--gutter:clamp(22px,5.5vw,100px);--ease:cubic-bezier(.22,1,.36,1)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:110px}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--body)}
@@ -247,15 +247,15 @@ em{font-style:normal;color:var(--orange)}
 .catalogue-course summary::-webkit-details-marker{display:none}
 .course-index{font-size:13px;color:var(--orange);padding-top:4px}
 .course-summary{flex:1;min-width:0}
-.course-summary h2{font-size:clamp(25px,2.7vw,38px);margin:11px 0 14px}
+.course-summary h3{font-size:clamp(25px,2.7vw,38px);margin:11px 0 14px}
 .course-summary p{font-size:14px;max-width:680px}
 .course-meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:20px;font-size:11px}
 .course-meta>span{border-right:1px solid var(--line);padding-right:22px}
 .course-meta>span:last-child{border-right:0}
 .expand-mark{font-size:30px;font-weight:400;padding:0 6px;transition:transform .25s}
 .catalogue-course[open] .expand-mark{transform:rotate(45deg)}
-.catalogue-course summary:hover h2{color:var(--orange)}
-.catalogue-course[open] .course-summary h2{color:var(--orange)}
+.catalogue-course summary:hover h3{color:var(--orange)}
+.catalogue-course[open] .course-summary h3{color:var(--orange)}
 .catalogue-body{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding:20px 30px 35px 47px;background:#edf1f2}
 .catalogue-body h3{font-size:23px;margin-bottom:14px}
 .catalogue-body .clean-list li{font-size:13px}
@@ -369,7 +369,7 @@ em{font-style:normal;color:var(--orange)}
  .page-hero{grid-template-columns:1fr;min-height:0}.page-hero-copy{padding:40px var(--gutter) 35px}.page-hero h1{font-size:clamp(35px,7.3vw,52px);margin:22px 0}.page-hero p{font-size:15px}.page-hero .hero-scroll{display:none}.page-hero .hero-actions{gap:12px}.page-hero-image{min-height:0;height:365px}.page-hero-image img{object-position:center 38%}.page-hero-image figcaption{flex-direction:row;font-size:7px;padding:16px 20px}.course-facts{grid-template-columns:1fr;gap:24px;padding:30px var(--gutter)}.course-facts>div+div{padding:24px 0 0;border-left:0;border-top:1px solid var(--line)}.course-facts p{font-size:14px}
  .outcomes-section{grid-template-columns:1fr;gap:25px;padding:55px var(--gutter)}.outcomes-section h2{font-size:36px}.outcome-photograph img{height:240px}.curriculum-section{padding:50px var(--gutter)}.curriculum summary{gap:17px;padding:22px 0}.curriculum summary h3{font-size:23px}.curriculum details>div{padding:0 0 25px 32px;font-size:14px}.clean-list li{font-size:14px}
  .billing-section{padding:50px var(--gutter)}.three-columns{grid-template-columns:1fr;gap:30px;margin-top:35px}.three-columns h3{font-size:25px}.faculty-section{grid-template-columns:1fr;gap:35px;padding:50px var(--gutter)}.faculty-section img{height:390px}.faculty-section h2{font-size:37px}.faculty-section p{max-width:100%}.about-statement{padding:50px var(--gutter)}.about-statement h2{font-size:35px}.values-section{grid-template-columns:1fr;gap:30px;padding:50px var(--gutter)}.values-section article{border-bottom:1px solid var(--line);padding-bottom:25px}.values-section article:last-child{border-bottom:0;padding-bottom:0}.values-section h3{margin:15px 0}
- .catalogue-intro{grid-template-columns:1fr;min-height:0}.catalogue-intro-copy{padding:40px var(--gutter)}.catalogue-intro h1{font-size:clamp(47px,9vw,65px);margin:22px 0 25px}.catalogue-cover{min-height:0;height:350px}.catalogue-cover img{object-position:center 31%}.catalogue-cover figcaption{left:0;padding:18px 24px}.catalogue-cover strong{font-size:63px}.catalogue-section{padding:15px var(--gutter) 50px}.catalogue-tools{grid-template-columns:1fr;gap:17px;padding:25px 0}.catalogue-course summary{gap:14px;padding:25px 0}.course-index{font-size:11px}.course-summary>.eyebrow{font-size:9px}.course-summary h2{font-size:26px}.course-summary p{font-size:13px}.course-meta{gap:10px;font-size:10px;margin-top:16px}.course-meta>span{padding-right:10px}.expand-mark{font-size:25px;padding:0}.catalogue-body{grid-template-columns:1fr;gap:25px;padding:24px 20px}.catalogue-body>a{grid-column:1}
+ .catalogue-intro{grid-template-columns:1fr;min-height:0}.catalogue-intro-copy{padding:40px var(--gutter)}.catalogue-intro h1{font-size:clamp(47px,9vw,65px);margin:22px 0 25px}.catalogue-cover{min-height:0;height:350px}.catalogue-cover img{object-position:center 31%}.catalogue-cover figcaption{left:0;padding:18px 24px}.catalogue-cover strong{font-size:63px}.catalogue-section{padding:15px var(--gutter) 50px}.catalogue-tools{grid-template-columns:1fr;gap:17px;padding:25px 0}.catalogue-course summary{gap:14px;padding:25px 0}.course-index{font-size:11px}.course-summary>.eyebrow{font-size:9px}.course-summary h3{font-size:26px}.course-summary p{font-size:13px}.course-meta{gap:10px;font-size:10px;margin-top:16px}.course-meta>span{padding-right:10px}.expand-mark{font-size:25px;padding:0}.catalogue-body{grid-template-columns:1fr;gap:25px;padding:24px 20px}.catalogue-body>a{grid-column:1}
  .text-hero{padding:45px var(--gutter)}.text-hero h1{font-size:clamp(45px,9vw,62px)}.text-hero p{font-size:15px}.image-text-hero{grid-template-columns:1fr;padding:0;min-height:0}.image-text-hero>div{padding:40px var(--gutter)}.image-text-hero h1{font-size:clamp(44px,8.8vw,61px)}.image-text-hero figure{min-height:0;height:350px}.partner-directory{padding:10px var(--gutter) 50px}.partner-directory article{padding:32px 0;grid-template-columns:25px 1fr;gap:17px}.partner-directory h2{font-size:31px}.partner-directory p{font-size:14px}.contact-grid{padding:35px var(--gutter)}.contact-grid>a{display:block;padding:28px}.contact-grid h2{font-size:33px;margin:22px 0}.contact-grid p{text-align:left}.contact-grid .text-link{margin-top:25px}.visit-section{grid-template-columns:1fr;gap:35px;padding:45px var(--gutter)}.visit-section h2{font-size:36px}.legal-copy{padding:0 var(--gutter) 50px}.legal-copy h2{font-size:29px}.legal-copy .grid,.legal-copy .stack{display:block}
  .final-cta{grid-template-columns:1fr;gap:25px;padding:50px var(--gutter)}.final-cta h2{font-size:44px}.final-cta p{max-width:100%}.site-footer{padding:40px var(--gutter) 25px}.footer-top{align-items:flex-start;gap:25px}.footer-top p{max-width:100%}.footer-grid{gap:30px 20px;padding:30px 0}.footer-grid a,.footer-grid p{font-size:11px}.footer-bottom{gap:16px;font-size:9px}.footer-bottom>span{width:100%;margin:0}.photo-credit,.disclaimer{font-size:9px}
 }
@@ -385,3 +385,119 @@ html.motion-paused{scroll-behavior:auto}
 .motion-paused .reveal.is-pending{opacity:1;transform:none}
 .motion-paused::view-transition-old(root),.motion-paused::view-transition-new(root){animation:none}
 @media print{.utility,.site-header,.final-cta,.site-footer,.catalogue-tools,.filter-reset,.hero-inset,.hero-annotation{display:none}body{background:white;color:black}p{color:black}.reveal.is-pending{opacity:1;transform:none}.home-hero,.page-hero,.catalogue-intro,.image-text-hero{display:block;background:white;color:black}.hero-visual,.page-hero-image,.catalogue-cover,.image-text-hero figure{display:none}.hero-copy,.page-hero-copy,.catalogue-intro-copy,.image-text-hero>div{padding:20px}.programme-panel[hidden]{display:grid!important}.catalogue-course{break-inside:avoid}details>div{display:block!important}a{text-decoration:underline}}
+
+/* Distinct page compositions / shared Mawonga identity. */
+.clinical-opening{display:grid;grid-template-columns:1fr 1.1fr;gap:6%;padding:60px var(--gutter) 70px;background:white;align-items:center}
+.clinical-opening h1{font-size:clamp(45px,4.8vw,72px);margin:26px 0}
+.clinical-opening p{max-width:440px;font-size:15px;margin-bottom:28px}
+.clinical-opening figure{position:relative;border-bottom:12px solid var(--brand-orange)}
+.clinical-opening img{height:550px;object-fit:cover;object-position:54% center}
+.clinical-opening figcaption{position:absolute;bottom:20px;left:-24px;background:var(--navy);color:white;padding:17px 21px;font-size:10px;letter-spacing:.05em}
+.clinical-focus{display:flex;flex-wrap:wrap;gap:0;margin-top:36px;border-top:1px solid var(--line)}
+.clinical-focus span{font-size:11px;padding:14px 14px 0 0}
+.page-clinical-training .outcomes-section{background:#edf2f6}
+.page-clinical-training .curriculum-section{background:white}
+.ethics-opening{padding:60px var(--gutter);background:#f2ede7}
+.ethics-title{max-width:940px;margin-bottom:45px}
+.ethics-title h1{font-size:clamp(43px,5.3vw,79px);margin-top:24px}
+.ethics-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:9%;align-items:center}
+.ethics-layout figure{border-left:10px solid var(--brand-orange)}
+.ethics-layout img{height:440px;object-fit:cover;object-position:center 35%}
+.ethics-layout p{max-width:520px;font-size:16px;line-height:1.85}
+.ethics-principles{margin:30px 0}
+.ethics-principles a{display:flex;align-items:center;gap:20px;padding:18px 0;border-top:1px solid #cfc9c1;font-size:15px}
+.ethics-principles a:last-child{border-bottom:1px solid #cfc9c1}
+.ethics-principles a>span:first-child{font-size:10px;color:var(--orange)}
+.ethics-principles a>span:last-child{margin-left:auto}
+.ethics-principles a:hover{color:var(--orange)}
+.page-biomedical-ethics .course-facts{background:#fffaf4}
+.page-biomedical-ethics .outcomes-section{grid-template-columns:1fr 1fr}
+.page-biomedical-ethics .curriculum-section{background:var(--navy);color:white}
+.page-biomedical-ethics .curriculum-section p{color:#d7e3ec}
+.page-biomedical-ethics .curriculum-section .section-number,.page-biomedical-ethics .curriculum summary>span{color:var(--copper)}
+.business-opening{display:grid;grid-template-columns:1.5fr .8fr;gap:35px 8%;padding:65px var(--gutter) 0;background:var(--navy);color:white}
+.business-opening h1{font-size:clamp(40px,4.7vw,70px);margin:24px 0}
+.business-opening h1 em{color:var(--copper)}
+.business-opening p{max-width:560px;color:#d7e3ec;font-size:15px;margin-bottom:25px}
+.business-opening .button{background:white;color:var(--navy);border-color:white}
+.business-opening aside{align-self:center;border-top:2px solid var(--brand-orange);padding-top:25px}
+.business-opening aside>a{display:flex;justify-content:space-between;gap:15px;padding:20px 0;border-bottom:1px solid #ffffff30;font-size:14px}
+.business-opening figure{position:relative;grid-column:1/-1;height:250px;overflow:hidden;margin-top:5px}
+.business-opening figure img{height:250px;object-fit:cover;object-position:center 38%}
+.business-opening figcaption{position:absolute;right:0;bottom:0;background:var(--blue);padding:18px 25px;font-size:11px}
+.page-medical-entrepreneurship .billing-section{background:#e8eef5}
+.page-medical-entrepreneurship .three-columns>div{border-top:3px solid var(--brand-orange);padding-top:25px}
+.about-opening{padding:65px var(--gutter) 60px;background:#e8eef5}
+.about-opening>div:first-child{max-width:950px}
+.about-opening h1{font-size:clamp(45px,5.5vw,80px);margin:25px 0}
+.about-opening p{max-width:610px;font-size:16px;margin-bottom:20px}
+.about-gallery{display:grid;grid-template-columns:1.3fr .7fr;gap:30px;margin-top:45px;align-items:end}
+.about-gallery figure:first-child img{height:370px;object-fit:cover;object-position:center 65%}
+.about-gallery figure:last-child img{height:270px;object-fit:cover;object-position:center 70%}
+.about-gallery figcaption{font-size:9px;letter-spacing:.09em;padding-top:15px}
+.page-about .about-statement{background:white}
+.page-about .values-section{background:var(--navy);color:white}
+.page-about .values-section p{color:#d7e3ec}
+.page-about .values-section article>span{color:var(--copper)}
+.network-opening{padding:75px var(--gutter);text-align:center;background:var(--navy);color:white}
+.network-opening h1{font-size:clamp(44px,5.4vw,80px);margin:25px 0}
+.network-opening em{color:var(--copper)}
+.network-opening p{max-width:590px;color:#d7e3ec;margin:auto}
+.network-roles{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:45px auto 0;max-width:1000px;border:1px solid #ffffff40}
+.network-roles a{padding:23px;border-right:1px solid #ffffff40;display:flex;justify-content:space-between;gap:20px;font-size:13px}
+.network-roles a:last-child{border-right:0}
+.network-roles a:hover{background:#ffffff10}
+.page-partners .partner-directory{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;padding-top:60px}
+.page-partners .partner-directory article{display:flex;flex-direction:column;align-items:flex-start;gap:24px;padding:0 0 35px;border-top:3px solid var(--brand-orange);border-bottom:1px solid var(--line)}
+.page-partners .partner-index{padding-top:23px}
+.page-partners .partner-directory h2{font-size:32px}
+.page-partners .partner-directory article>a{margin-top:auto}
+.contact-opening{display:grid;grid-template-columns:1.6fr 1fr;gap:10%;padding:65px var(--gutter);background:white;align-items:center}
+.contact-opening h1{font-size:clamp(44px,4.7vw,70px);margin:25px 0}
+.contact-opening>div>p{max-width:540px;font-size:16px}
+.contact-opening aside{border-left:3px solid var(--brand-orange);padding-left:30px}
+.contact-opening aside>p{font-size:13px;margin:12px 0 25px}
+.page-contact-us .contact-grid{padding-top:0;background:white;padding-bottom:65px}
+.page-contact-us .visit-section{background:var(--navy);color:white}
+.page-contact-us .visit-section p{color:#d7e3ec}
+.prospectus-opening{display:grid;grid-template-columns:1.7fr .7fr;gap:10%;padding:60px var(--gutter) 45px;background:#e8eef5;align-items:center}
+.prospectus-opening h1{font-size:clamp(42px,4.9vw,73px);margin:25px 0}
+.prospectus-opening p{max-width:620px;font-size:15px}
+.prospectus-opening aside{border-left:1px solid #bdcbd8;padding-left:30px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.prospectus-opening aside>strong{font:500 84px/1 var(--display);color:var(--blue);letter-spacing:-.05em}
+.prospectus-opening aside>span:not(.eyebrow){font-size:11px}
+.stream-directory{display:grid;grid-template-columns:repeat(3,1fr);padding:0 var(--gutter) 50px;background:#e8eef5;gap:1px}
+.stream-directory a{display:grid;grid-template-columns:1fr auto;gap:12px;padding:24px;background:white;border-bottom:3px solid transparent;transition:border-color .25s,background .25s}
+.stream-directory .eyebrow{grid-column:1/-1;font-size:9px;color:var(--muted)}
+.stream-directory strong{font:500 19px/1.35 var(--display)}
+.stream-directory a>span:last-child{font-size:24px;color:var(--orange)}
+.stream-directory a:hover,.stream-directory a[aria-current]{border-color:var(--brand-orange);background:#f7f9fb}
+.course-group{margin:55px 0 0;scroll-margin-top:125px}
+.course-group-heading{display:grid;grid-template-columns:65px 1fr auto;gap:25px;align-items:center;padding:25px 0;border-top:2px solid var(--blue)}
+.group-number{font:400 45px/1 var(--display);color:var(--logo-slate);letter-spacing:-.05em}
+.course-group-heading h2{font-size:33px;margin:8px 0 12px}
+.course-group-heading p{font-size:13px;max-width:570px}
+.group-count{font-size:11px;padding:8px 12px;border:1px solid var(--line);white-space:nowrap}
+.course-summary h3{font-size:clamp(24px,2.5vw,34px);margin:10px 0 14px}
+.page-course-prospectus .catalogue-course summary{padding:27px 0}
+.page-course-prospectus .course-summary>.eyebrow{display:none}
+.page-course-prospectus .catalogue-tools{border-top:0}
+.page-privacy-policy .legal-nav{position:sticky;top:110px;background:var(--paper);padding:16px 0;z-index:2}
+@media(max-width:900px){
+ .clinical-opening{gap:5%;padding-top:40px}.clinical-opening h1{font-size:48px}.clinical-opening img{height:470px}
+ .ethics-layout{gap:6%}.ethics-principles a{font-size:13px}
+ .business-opening{grid-template-columns:1.4fr .8fr;gap:30px 5%}.business-opening h1{font-size:46px}
+ .contact-opening{gap:6%;grid-template-columns:1.4fr 1fr}.contact-opening h1{font-size:47px}
+ .page-partners .partner-directory{gap:25px}.page-partners .partner-directory h2{font-size:27px}
+ .prospectus-opening{gap:6%;grid-template-columns:1.4fr .7fr}.stream-directory strong{font-size:17px}
+}
+@media(max-width:760px){
+ .clinical-opening{grid-template-columns:1fr;padding:40px var(--gutter);gap:30px}.clinical-opening h1{font-size:clamp(40px,8vw,57px)}.clinical-opening img{height:350px}.clinical-opening figcaption{left:0;font-size:9px}.clinical-focus{margin-top:25px}
+ .ethics-opening{padding:40px var(--gutter)}.ethics-title h1{font-size:clamp(39px,8vw,58px)}.ethics-title{margin-bottom:28px}.ethics-layout{grid-template-columns:1fr;gap:28px}.ethics-layout img{height:340px}.ethics-layout p{font-size:15px}.ethics-principles a{font-size:14px}
+ .business-opening{grid-template-columns:1fr;padding:40px var(--gutter) 0;gap:30px}.business-opening h1{font-size:clamp(38px,7.8vw,56px)}.business-opening figure{grid-column:1;height:240px}.business-opening figure img{height:240px}.business-opening aside>a{padding:16px 0}
+ .about-opening{padding:40px var(--gutter)}.about-opening h1{font-size:clamp(41px,8vw,58px)}.about-gallery{gap:16px;margin-top:30px;grid-template-columns:1.2fr .8fr}.about-gallery figure:first-child img{height:280px}.about-gallery figure:last-child img{height:210px}.about-gallery figcaption{font-size:8px}
+ .network-opening{padding:45px var(--gutter);text-align:left}.network-opening h1{font-size:clamp(40px,8vw,58px)}.network-roles{grid-template-columns:1fr;margin-top:30px}.network-roles a{border-right:0;border-bottom:1px solid #ffffff40;padding:19px}.network-roles a:last-child{border-bottom:0}.page-partners .partner-directory{grid-template-columns:1fr;gap:35px;padding-top:40px}.page-partners .partner-directory h2{font-size:32px}.page-partners .partner-directory article{gap:18px}
+ .contact-opening{grid-template-columns:1fr;gap:30px;padding:40px var(--gutter)}.contact-opening h1{font-size:clamp(40px,8vw,57px)}.contact-opening aside{padding-left:22px}.page-contact-us .contact-grid{padding-bottom:40px}
+ .prospectus-opening{grid-template-columns:1fr;gap:30px;padding:40px var(--gutter)}.prospectus-opening h1{font-size:clamp(40px,8vw,58px)}.prospectus-opening aside{display:none}.stream-directory{grid-template-columns:repeat(2,1fr);padding-bottom:35px}.stream-directory a{padding:17px;gap:10px}.stream-directory strong{font-size:16px}.stream-directory .eyebrow{font-size:8px}.course-group{margin-top:35px}.course-group-heading{grid-template-columns:35px 1fr;gap:15px;padding:22px 0}.group-number{font-size:32px}.course-group-heading h2{font-size:27px}.course-group-heading p{font-size:13px}.group-count{grid-column:2;justify-self:start;padding:5px 9px}.course-summary h3{font-size:25px}
+}
+@media print{.stream-directory,.network-roles{display:none}.course-group[hidden]{display:block!important}.clinical-opening,.ethics-layout,.business-opening,.about-opening,.contact-opening,.prospectus-opening{display:block;background:white;color:black}.clinical-opening figure,.ethics-layout figure,.business-opening figure,.about-gallery{display:none}}

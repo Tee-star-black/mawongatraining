@@ -9,6 +9,7 @@ class Element {
   fire(name,event={}){for(const fn of this.handlers[name]||[])fn(event);}
   setAttribute(name,value){this.attrs[name]=value;}
   getAttribute(name){return this.attrs[name];}
+  removeAttribute(name){delete this.attrs[name];}
   focus(){this.focused=true;}
   click(){this.fire('click');}
 }
@@ -21,14 +22,21 @@ function setup(query='',reducedMotion=false) {
   const panels=buttons.map(b=>Object.assign(new Element(),{id:'panel-'+b.dataset.programme}));
   const courses=[...read('course-prospectus.html').matchAll(/<details class="catalogue-course"[^>]*data-stream="([^"]+)">(.*?)<\/details>/gs)].map(m=>new Element({textContent:m[2].replace(/<[^>]+>/g,' '),dataset:{stream:m[1]}}));
   const search=new Element(),select=new Element();select.value='all';select.options=['all','practice','business','marketing','leadership','digital','me'].map(value=>({value}));
+  const groupLabels={};
+  const streamIds=['practice','business','marketing','leadership','digital','me'];
+  const groups=streamIds.map(id=>{
+    const group=new Element({dataset:{courseGroup:id}});
+    groupLabels[id]=new Element();group.querySelector=()=>groupLabels[id];return group;
+  });
+  const streamLinks=streamIds.map(id=>new Element({dataset:{streamLink:id}}));
   const reset=new Element(),count=new Element(),empty=new Element();
   const motion=new Element();const rootClasses=new Set();
   const elements={'.menu-toggle':menu,'#primary-nav':nav,'.nav-courses':dropdown,'#course-search':search,'#stream-filter':select,'.motion-toggle':motion,'.filter-reset':reset,'#course-count':count,'#course-empty':empty};
   const doc=new Element();doc.documentElement={classList:{add:x=>rootClasses.add(x),toggle:(x,on)=>on?rootClasses.add(x):rootClasses.delete(x)}};doc.activeElement=nav;
   doc.querySelector=s=>elements[s]||null;
-  doc.querySelectorAll=s=>({'[data-programme]':buttons,'.programme-panel':panels,'.catalogue-course':courses}[s]||[]);
+  doc.querySelectorAll=s=>({'[data-programme]':buttons,'.programme-panel':panels,'.catalogue-course':courses,'[data-course-group]':groups,'[data-stream-link]':streamLinks}[s]||[]);
   vm.runInNewContext(read('assets/site.js'),{document:doc,window:{location:{search:query},matchMedia:()=>({matches:reducedMotion,addEventListener(){}})},URLSearchParams});
-  return {doc,menu,nav,classes,buttons,panels,courses,search,select,reset,count,empty,motion,rootClasses};
+  return {doc,menu,nav,classes,buttons,panels,courses,search,select,reset,count,empty,motion,rootClasses,groups,groupLabels,streamLinks};
 }
 test('pathway selection presents the selected course and updates all pressed states',()=>{
  const s=setup();s.buttons[2].fire('click');
@@ -73,4 +81,24 @@ test('keyboard pathway navigation selects, focuses and wraps between programmes'
  s.buttons[2].fire('keydown',{key:'ArrowRight',preventDefault(){}});
  assert.ok(s.buttons[0].focused);
  assert.deepEqual(s.panels.map(p=>p.hidden),[false,true,true]);
+});
+
+test('course groups hide empty results and restore all six categories on reset',()=>{
+ const s=setup('?stream=business');
+ assert.deepEqual(s.groups.map(g=>g.hidden),[true,false,true,true,true,true]);
+ s.search.value='scheduling';s.search.fire('input');
+ assert.equal(s.groupLabels.business.textContent,'1 course');
+ s.search.value='not-a-course';s.search.fire('input');
+ assert.ok(s.groups.every(g=>g.hidden));
+ s.reset.fire('click');
+ assert.ok(s.groups.every(g=>!g.hidden));
+ assert.deepEqual(Object.values(s.groupLabels).map(label=>label.textContent),['3 courses','3 courses','3 courses','2 courses','2 courses','2 courses']);
+});
+test('learning stream navigation clears a stale search and exposes its destination',()=>{
+ const s=setup();s.search.value='not-a-course';s.search.fire('input');
+ s.streamLinks[3].fire('click');
+ assert.equal(s.search.value,'');assert.equal(s.select.value,'leadership');
+ assert.equal(s.count.textContent,'2');assert.equal(s.groups[3].hidden,false);
+ assert.equal(s.streamLinks[3].attrs['aria-current'],'true');
+ s.reset.fire('click');assert.equal(s.streamLinks[3].attrs['aria-current'],undefined);
 });

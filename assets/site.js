@@ -100,6 +100,8 @@
   const select = document.querySelector('#stream-filter');
   const entries = [...document.querySelectorAll('.catalogue-course')];
   const reset = document.querySelector('.filter-reset');
+  const groups = [...document.querySelectorAll('[data-course-group]')];
+  const streamLinks = [...document.querySelectorAll('[data-stream-link]')];
   if (search && select && reset) {
     reset.hidden = false;
     // Include modules and activities so a search can find a course by its subject matter.
@@ -116,9 +118,25 @@
         entry.hidden = !match;
         if (match) count++;
       });
+      groups.forEach(group => {
+        const visible = entries.filter(entry => entry.dataset.stream === group.dataset.courseGroup && !entry.hidden).length;
+        group.hidden = visible === 0;
+        const label = group.querySelector('[data-group-count]');
+        if (label) label.textContent = `${visible} ${visible === 1 ? 'course' : 'courses'}`;
+      });
+      streamLinks.forEach(link => {
+        if (link.dataset.streamLink === select.value) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
+      });
       document.querySelector('#course-count').textContent = String(count);
       document.querySelector('#course-empty').hidden = count !== 0;
     };
+    streamLinks.forEach(link => link.addEventListener('click', () => {
+      search.value = '';
+      select.value = link.dataset.streamLink;
+      filter();
+      // The ordinary anchor then takes the visitor to the now-visible group.
+    }));
     search.addEventListener('input', filter);
     select.addEventListener('change', filter);
     reset.addEventListener('click', () => {
