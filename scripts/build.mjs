@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync } from 'node:fs';
+import { applyVisualRefresh } from './visual-refresh.mjs';
 const read = p => readFileSync(new URL('../' + p, import.meta.url), 'utf8');
 const write = (p, s) => writeFileSync(new URL('../' + p, import.meta.url), s);
 const courses = JSON.parse(read('content/courses.json'));
@@ -66,7 +67,7 @@ const pages=[
  {path:'/contact-us/',file:'contact-us.html',title:'Contact Mawonga Training | Johannesburg',description:'Contact Mawonga Training in Tulisa Park, Johannesburg for clinical skills, biomedical ethics, practice management and group training enquiries.',body:contact()},
  {path:'/privacy-policy/',file:'privacy-policy.html',title:'Privacy & Terms | Mawonga Training',description:'Privacy information, data protection, terms of use and the professional training disclaimer for Mawonga Training.',body:`<section class="text-hero"><span class="eyebrow">Privacy &amp; professional information</span><h1>Privacy, terms<br>and responsible use.</h1><p>How Mawonga handles information and the conditions for using this website and training content.</p><nav class="legal-nav" aria-label="Legal sections"><a href="#privacy-policy">Privacy</a><a href="#data-protection">Data protection</a><a href="#terms-of-use">Terms</a><a href="#training-disclaimer">Training disclaimer</a></nav></section><div class="legal-copy">${read('content/privacy.html')}</div>`}
 ];
-for(const p of pages)write(p.file,page(p));
+for (const p of pages) write(p.file, applyVisualRefresh(page(p), p.file));
 // Retain the original filename as a working alias without indexing a duplicate page.
 write('about-us.html',`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=/about/"><link rel="canonical" href="${origin}/about/"><title>About Mawonga Training</title></head><body><a href="/about/">Continue to About Mawonga Training</a></body></html>`);
 write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(([,url])=>`<url><loc>${origin+url}</loc></url>`).join('')}</urlset>\n`);
