@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readdirSync } from 'node:fs';
 import { pages, route } from '../scripts/routes.mjs';
 import { handle } from '../scripts/serve.mjs';
 const request = async (url,method='GET')=>{
@@ -33,7 +34,7 @@ test('HEAD returns headers without content, unsupported writes return 405',async
  const post=await request('/','POST');assert.equal(post.status,405);assert.equal(post.headers.Allow,'GET, HEAD');
 });
 test('all used image assets are reachable through the preview handler',async()=>{
- for(const file of ['logo.webp','workshop-1.webp','workshop-2.webp','workshop-3.webp']){
+ for(const file of readdirSync(new URL('../assets/',import.meta.url)).filter(name=>name.endsWith('.webp'))){
   const res=await request('/assets/'+file);assert.equal(res.status,200);assert.equal(res.headers['Content-Type'],'image/webp');assert.ok(res.body.length>1000);
  }
 });

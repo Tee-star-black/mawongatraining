@@ -1,13 +1,14 @@
 # Mawonga Training
 
-A responsive rebuild of the Mawonga Training website, using the supplied website content and real workshop photographs. Blue, warm white and orange styling with clinical line illustrations, workshop field notes, programme discovery and a searchable course prospectus.
+A responsive rebuild of the Mawonga Training website, using the supplied website content, real workshop photographs and licensed clinical photography. A navy, white and copper identity with expansive photographic heroes, layered workshop compositions, photographic programme panels and a searchable course prospectus.
 
 ## Run locally
 
 Requires Node.js 20 or later. No package installation is needed.
 
 ```powershell
-git pull origin main
+git switch feat/mawonga-creative-motion
+git pull origin feat/mawonga-creative-motion
 npm run dev
 ```
 
@@ -20,6 +21,7 @@ Open **http://localhost:3000**. This preview resolves the clean page URLs and re
 - `content/privacy.html`: preserved privacy, terms and professional disclaimer copy.
 - `assets/site.css`: responsive design, focus styles and reduced-motion support.
 - `assets/site.js`: mobile menu, keyboard-accessible programme selector, prospectus search/filter/reset, scroll reveals and motion controls.
+- `assets/*-480.webp`, `*-960.webp`, `*-1920.webp`: responsive clinical photography. Source credits and licence links are in `docs/photography.md`.
 - `assets/workshop-*.webp`: optimised copies of the three supplied workshop photos. Original images remain in `images/`.
 
 ```powershell
@@ -48,8 +50,8 @@ Automated checks and 12 tests pass. A browser visual review on desktop and mobil
 
 ## Creative direction and motion
 
-The homepage follows purpose → programmes → courses by goal → learning in practice → facilitators → partners → enquiry. Clinical care, ethical judgement and practice growth each have a custom SVG illustration. A pulse line in the workshop photograph and a connected learning path relate the motion to the training content.
+The homepage follows purpose → programmes → courses by goal → learning in practice → facilitators → partners → enquiry. Each programme combines relevant clinical photography with a small custom SVG illustration. A pulse annotation in the hero and a connected learning path relate motion to the training content. Clinical and workshop photographs have separate captions; stock models are not described as Mawonga staff or workshop attendees.
 
-Programme changes use a short entrance transition. Section reveals run once as content enters the viewport, and supported browsers fade between pages using native view transitions. Navigation is ordinary links; unsupported browsers use normal page loads. Mobile layouts stack programme buttons with full labels and at least 44px targets, and turn the learning path vertical.
+Programme changes use a short entrance transition. Section reveals run once as content enters the viewport, and supported browsers fade between pages using native view transitions. Navigation is ordinary links; unsupported browsers use normal page loads. Mobile layouts stack programme buttons with full labels and at least 44px targets, and use a vertical learning path. Clinical images use responsive 480px, 960px and 1920px WebP sources, with priority loading for the main hero and lazy loading for secondary photos.
 
 The footer provides a Pause motion / Enable motion control. Reduced-motion preferences disable animation and smooth scrolling automatically; settings can be overridden for the current page. Content remains available when JavaScript or IntersectionObserver is unavailable. No animation or UI dependency is required.

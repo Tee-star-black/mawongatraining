@@ -27,6 +27,17 @@ for(const [path,file] of Object.entries(pages)){
   if(url.hash && ids.has(target) && !ids.get(target).has(url.hash.slice(1)))fail.push(`${file}: missing fragment ${ref}`);
  }
  for(const image of html.matchAll(/<img\b[^>]*>/g))if(!/\balt="[^"]*"/.test(image[0]))fail.push(`${file}: image lacks alt`);
+ for(const source of html.matchAll(/srcset="([^"]+)"/g)){
+  for(const candidate of source[1].split(',')){
+   const path=candidate.trim().split(/\s+/)[0];
+   const assetRoute=route(path);
+   if(!assetRoute?.file || !existsSync(resolve(root,assetRoute.file)))fail.push(`${file}: missing responsive image ${path}`);
+   else {
+    const bytes=readFileSync(resolve(root,assetRoute.file));
+    if(bytes.length<12 || bytes.toString('ascii',0,4)!=='RIFF' || bytes.toString('ascii',8,12)!=='WEBP' || bytes.readUInt32LE(4)+8!==bytes.length)fail.push(`${file}: invalid WebP ${path}`);
+   }
+  }
+ }
  const fileIds=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);if(new Set(fileIds).size!==fileIds.length)fail.push(`${file}: duplicate IDs`);
  if(/Lorem ipsum|accredited ethics|prospectus-room\.svg|prospectus-dashboard\.svg/i.test(html))fail.push(`${file}: placeholder, unverified claim or missing legacy image`);
 }
