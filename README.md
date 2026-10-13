@@ -46,7 +46,7 @@ This repository change does not deploy the live domain. It also does not submit 
 
 See `docs/seo-implementation.md` for the supplied SEO guide review and implementation decisions. Automated checks cover page links and fragments, asset existence, metadata, JSON-LD, course count and sitemap coverage. Tests cover route handling, legacy redirects, images, restricted runtime files and browser interaction logic.
 
-Automated checks and 16 tests pass. A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.
+Automated checks and 17 tests pass. A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.
 
 ## Creative direction and motion
 
@@ -67,3 +67,9 @@ The prospectus groups all 15 courses into six learning streams, each with a head
 The requested mawonga logo.png is used as the shared header/footer logo, favicon and organisation logo through an optimised WebP copy. Page headings are centred. The prospectus uses a laboratory-inspired illustration, a fine measurement grid, six learning stations and a short orientation guide. Every course explains why it matters using the existing description, topics and activities. This is a visual metaphor for course discovery, not a claim about laboratory facilities or accreditation.
 
 The homepage information carousel uses CSS perspective, subtle pointer tilt and scroll snapping. Arrow buttons, track arrow keys and native touch scrolling move between the four information cards. Card links remain ordinary navigable links, and all information is available without JavaScript. Motion pause/reduced-motion preferences disable tilt and smooth scrolling; there is no forced automatic rotation.
+
+## Mobile review
+
+Phone overrides explicitly stack the prospectus opening and ethics outcomes after the later desktop rules. Mobile form fields use 16px text, navigation can scroll within short/dynamic viewports, footer links have 44px touch targets, long headings can wrap, and very narrow footers stack vertically. Touch devices use native carousel scrolling without hover tilt; a debounced scroll handler keeps its position indicator current where scrollend is unavailable.
+
+Automated behaviour, asset and content checks pass. Desktop/mobile visual browser review and real-device testing remain outstanding because browser automation is unavailable in this environment. The source checks do not establish that every rendered viewport is free of overflow.

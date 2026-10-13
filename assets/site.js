@@ -119,7 +119,8 @@
       event.preventDefault();move(event.key === 'ArrowRight' ? 1 : -1);
     });
     // Manual swipe updates the selected card once scrolling settles.
-    track.addEventListener('scrollend', () => {
+    let scrollTimer;
+    const updatePosition = () => {
       const centre = track.scrollLeft + track.clientWidth / 2;
       let best = Infinity;
       cards.forEach((card, index) => {
@@ -127,7 +128,12 @@
         if (distance < best) { best = distance; active = index; }
       });
       announce();
-    });
+    };
+    track.addEventListener('scrollend', () => { clearTimeout(scrollTimer); updatePosition(); });
+    track.addEventListener('scroll', () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(updatePosition, 150);
+    }, { passive: true });
     cards.forEach(card => {
       card.addEventListener('pointermove', event => {
         if (motionPaused || event.pointerType !== 'mouse') return;

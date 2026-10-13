@@ -582,3 +582,65 @@ h1,h2,h3{text-align:center}
 .motion-paused .knowledge-card{transform:none}
 .motion-paused .knowledge-track{scroll-behavior:auto}
 @media print{.carousel-controls{display:none}.knowledge-track{display:block;overflow:visible}.knowledge-card{break-inside:avoid;box-shadow:none;margin-bottom:20px;transform:none}.lab-window{display:none}.course-group{box-shadow:none}.page-course-prospectus .catalogue-section{background:white}}
+
+/* Mobile safeguards: preserve the intended stacks after later desktop overrides. */
+main,section,article,figure,nav,aside,.course-summary,.programme-detail{min-width:0}
+h1,h2,h3{overflow-wrap:break-word}
+img,picture{max-width:100%}
+.knowledge-track{overscroll-behavior-x:contain;scroll-padding-inline:12px;-webkit-overflow-scrolling:touch}
+@media(max-width:900px){
+ .site-header nav{max-height:calc(100vh - 110px);max-height:calc(100dvh - 110px);overflow-y:auto;overscroll-behavior-y:contain;padding-bottom:10px}
+ .site-header nav>a,.nav-courses summary{min-height:44px}
+}
+@media(max-width:760px){
+ :root{--gutter:clamp(16px,5.5vw,32px)}
+ html{scroll-padding-top:95px}
+ .prospectus-opening{grid-template-columns:minmax(0,1fr);gap:25px;padding:35px var(--gutter) 0}
+ .page-biomedical-ethics .outcomes-section{grid-template-columns:minmax(0,1fr)}
+ .catalogue-tools input,.catalogue-tools select{font-size:16px;max-width:100%;min-height:54px}
+ .filter-reset{min-height:48px;padding-inline:18px}
+ .footer-grid a{min-height:44px;display:flex;align-items:center;margin-bottom:2px;overflow-wrap:anywhere}
+ .footer-bottom a{min-height:44px;display:inline-flex;align-items:center}
+ .legal-nav a{min-height:44px;display:inline-flex;align-items:center}
+ .home-hero h1{font-size:clamp(35px,10.5vw,64px)}
+ .hero-visual{min-height:clamp(340px,105vw,480px)}
+ .course-group{padding:16px}
+ .course-group-heading{grid-template-columns:26px minmax(0,1fr);gap:12px}
+ .course-group-heading h2{font-size:clamp(22px,6vw,28px)}
+ .course-group-heading .group-count{white-space:normal}
+ .catalogue-course summary{gap:9px}
+ .course-summary h3{font-size:clamp(20px,5.7vw,25px)}
+ .course-meta{gap:10px 8px;line-height:1.8}
+ .catalogue-body{padding:20px 12px}
+ .course-context{padding:16px}
+ .knowledge-card{flex-basis:94%;padding:22px}
+ .knowledge-card h3{font-size:clamp(24px,6.4vw,30px)}
+ .carousel-controls{gap:14px}
+ .stream-directory a{padding:16px 13px;min-height:115px}
+ .stream-directory strong{font-size:clamp(14px,3.9vw,17px);overflow-wrap:break-word}
+ .hero-photo figcaption{padding:15px 18px}
+ .hero-photo figcaption>span:first-child{max-width:95%;line-height:1.6}
+ .lab-window figcaption{line-height:1.6;font-size:9px;letter-spacing:.04em}
+ .lab-orientation p{font-size:14px}
+ .contact-opening h1,.clinical-opening h1,.business-opening h1,.ethics-title h1,.about-opening h1,.network-opening h1,.prospectus-opening h1{font-size:clamp(32px,8.2vw,55px)}
+ .page-hero h1{font-size:clamp(31px,8vw,52px)}
+ .visit-section dl>div{flex-wrap:wrap;gap:5px 15px}
+}
+@media(max-width:380px){
+ .footer-grid{grid-template-columns:minmax(0,1fr)}
+ .course-group-heading{grid-template-columns:minmax(0,1fr)}
+ .course-group-heading .group-number{display:none}
+ .course-group-heading .group-count{grid-column:1;justify-self:center}
+ .stream-directory{gap:2px}
+ .hero-inset{width:140px;left:16px}
+ .about-gallery{gap:12px}
+ .image-index{font-size:15px;padding:14px}
+ .curriculum summary{gap:12px}
+ .curriculum summary h3{font-size:21px}
+}
+@media(hover:none),(pointer:coarse){
+ .knowledge-card:hover{transform:none;box-shadow:9px 12px 0 #bfd0e040,0 18px 28px #234c6d12}
+ .knowledge-card h3{transform:none}
+ .knowledge-track{touch-action:pan-x pan-y}
+}
+@media(max-width:900px) and (orientation:landscape){.site-header nav{max-height:calc(100dvh - 85px)}.hero-visual{min-height:340px}}

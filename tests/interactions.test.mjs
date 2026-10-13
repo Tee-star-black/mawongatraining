@@ -40,7 +40,7 @@ function setup(query='',reducedMotion=false,carousel=false) {
   const doc=new Element();doc.documentElement={classList:{add:x=>rootClasses.add(x),toggle:(x,on)=>on?rootClasses.add(x):rootClasses.delete(x)}};doc.activeElement=nav;
   doc.querySelector=s=>elements[s]||null;
   doc.querySelectorAll=s=>({'[data-programme]':buttons,'.programme-panel':panels,'.catalogue-course':courses,'[data-course-group]':groups,'[data-stream-link]':streamLinks}[s]||[]);
-  vm.runInNewContext(read('assets/site.js'),{document:doc,window:{location:{search:query},matchMedia:()=>({matches:reducedMotion,addEventListener(){}})},URLSearchParams});
+  vm.runInNewContext(read('assets/site.js'),{setTimeout,clearTimeout,document:doc,window:{location:{search:query},matchMedia:()=>({matches:reducedMotion,addEventListener(){}})},URLSearchParams});
   return {doc,menu,nav,classes,buttons,panels,courses,search,select,reset,count,empty,motion,rootClasses,groups,groupLabels,streamLinks,track,previous,next,position,controls,cards};
 }
 test('pathway selection presents the selected course and updates all pressed states',()=>{
@@ -120,4 +120,10 @@ test('homepage carousel advances, wraps and supports focused-track keyboard navi
 test('carousel obeys reduced motion and manual scrolling updates its position',()=>{
  const s=setup('',true,true);s.next.fire('click');assert.equal(s.track.lastScroll.behavior,'auto');
  s.track.scrollLeft=700;s.track.fire('scrollend');assert.equal(s.position.textContent,'03 / 04');
+});
+
+test('touch carousel position updates even when scrollend is unavailable',async()=>{
+ const s=setup('',false,true);s.track.scrollLeft=700;s.track.fire('scroll');
+ await new Promise(resolve=>setTimeout(resolve,180));
+ assert.equal(s.position.textContent,'03 / 04');
 });
