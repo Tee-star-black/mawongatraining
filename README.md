@@ -46,7 +46,7 @@ This repository change does not deploy the live domain. It also does not submit 
 
 See `docs/seo-implementation.md` for the supplied SEO guide review and implementation decisions. Automated checks cover page links and fragments, asset existence, metadata, JSON-LD, course count and sitemap coverage. Tests cover route handling, legacy redirects, images, restricted runtime files and browser interaction logic.
 
-Automated checks and 18 tests pass. A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.
+Automated checks and 19 tests pass. A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.
 
 ## Creative direction and motion
 
@@ -77,3 +77,7 @@ Automated behaviour, asset and content checks pass. Desktop/mobile visual browse
 ## Contrast and partner cleanup
 
 Solid deep-blue and burnt-orange section backgrounds now contrast with light course-reading surfaces. Programme icons use thicker 4.5px strokes, stronger accents and larger sizes. The partner network contains Dr Mukudu & Partners and TeleDoctor SA only; the removed partner’s entry, links, metadata and dedicated/composite artwork are no longer published. Regression checks cover both branding absence and the removed image routes.
+
+## Prospectus image alignment
+
+The seven supplied images in images/MTImages now appear on the prospectus. The prospectus shield introduces the page, and each category badge appears in its directory tile and group header: nurse-led practice, business and finance, marketing and outreach, leadership, digital health, and quality improvement. The six badge files retain their source proportions and transparency. All seven optimised WebP files total approximately 114 KiB. Original uploads are unchanged.

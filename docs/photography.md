@@ -26,3 +26,19 @@ The original images in images/ are now used on the appropriate pages. Resized We
 The original mawonga logo.png remains the source of the existing shared logo.webp. IMAGE 1.jpeg, IMAGE 2.jpeg and IMAGE 3.jpeg remain visible as workshop-1.webp, workshop-2.webp and workshop-3.webp. The dummy placeholder is not published as page imagery. Supplied clinical and ethics artwork is described as illustration, rather than as a photograph of a Mawonga event.
 
 Shared header/footer identity and favicon now use mawonga-primary-logo.webp, a 320px optimisation of the requested images/mawonga logo.png. The original is retained unchanged.
+
+## Supplied MTImages prospectus set
+
+The images uploaded to images/MTImages are used on the prospectus. Originals remain unchanged. Badges are displayed with object-fit: contain so that no part of the emblem is cropped; each appears in its matching directory tile and learning-stream header. Alt text is empty for repeated badges because the adjacent headings provide the same information.
+
+| Original | Optimised asset | Learning stream |
+| --- | --- | --- |
+| nurseled.png | stream-practice.webp | Nurse-led practice |
+| business and finance.png | stream-business.webp | Business & finance |
+| marketing and outreach.png | stream-marketing.webp | Marketing & outreach |
+| leadership.png | stream-leadership.webp | Leadership |
+| digital health.png | stream-digital.webp | Digital health |
+| quality and improvement.png | stream-me.webp | Quality improvement |
+| prospectus.jpg | prospectus-learning-lab.webp | Main prospectus illustration |
+
+Badges preserve their source dimensions and alpha channel, and load lazily. The main prospectus image is optimised to 1200px with priority loading. No generative image changes were applied.
