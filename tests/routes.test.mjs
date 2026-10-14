@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readdirSync } from 'node:fs';
 import { pages, route } from '../scripts/routes.mjs';
 import { handle } from '../scripts/serve.mjs';
 const request = async (url,method='GET')=>{
@@ -33,7 +34,43 @@ test('HEAD returns headers without content, unsupported writes return 405',async
  const post=await request('/','POST');assert.equal(post.status,405);assert.equal(post.headers.Allow,'GET, HEAD');
 });
 test('all used image assets are reachable through the preview handler',async()=>{
- for(const file of ['logo.webp','workshop-1.webp','workshop-2.webp','workshop-3.webp']){
+ for(const file of readdirSync(new URL('../assets/',import.meta.url)).filter(name=>name.endsWith('.webp'))){
   const res=await request('/assets/'+file);assert.equal(res.status,200);assert.equal(res.headers['Content-Type'],'image/webp');assert.ok(res.body.length>1000);
  }
+});
+
+test('removed partner branding and legacy artwork are absent from public routes',async()=>{
+ for(const page of ['/','/partners/'])assert.doesNotMatch((await request(page)).body.toString(),/medkulula|partner-03/i);
+ for(const asset of ['/assets/mawonga-medkulula.webp','/images/MedKulula.png','/assets/mawonga-partnership.webp','/images/Partnership.png'])assert.equal((await request(asset)).status,404,asset);
+});
+
+test('prospectus badges stay with their matching learning stream and course list',async()=>{
+ const html=(await request('/course-prospectus/')).body.toString();
+ assert.match(html,/<img src="\/assets\/prospectus-shield-cutout\.webp"/);
+ const groups=[...html.matchAll(/<section class="course-group"[^>]*data-course-group="([^"]+)">(.*?)<\/section>/gs)];
+ assert.deepEqual(groups.map(group=>group[1]),['practice','business','marketing','leadership','digital','me']);
+ const expected={practice:[1,2,3],business:[4,5,6],marketing:[7,8,9],leadership:[10,11],digital:[12,13],me:[14,15]};
+ for(const [,stream,group] of groups){
+  assert.ok(group.includes(`src="/assets/stream-${stream}-cutout.webp"`),stream);
+  const courses=[...group.matchAll(/class="catalogue-course" id="course-(\d+)"/g)].map(match=>Number(match[1]));
+  assert.deepEqual(courses,expected[stream]);
+  assert.equal((await request(`/assets/stream-${stream}-cutout.webp`)).status,200);
+ }
+});
+
+test('new programme photos are connected to the matching homepage panels',async()=>{
+ const html=(await request('/')).body.toString();
+ const hero=html.match(/<figure class="hero-photo">(.*?)<\/figure>/s)?.[1];
+ assert.match(hero,/clinical-training\.webp/);
+ assert.match(hero,/fetchpriority="high"/);
+ const carousel=html.match(/<div class="knowledge-track"[^>]*>(.*?)<div class="carousel-controls"/s)?.[1];
+ const files={clinical:'clinical-training.webp',ethics:'biomedical-practice.webp',business:'medical-entrepreneurship.webp'};
+ for(const [id,file] of Object.entries(files)){
+  const panel=html.match(new RegExp(`<article class="programme-panel" id="panel-${id}"[^>]*>(.*?)</article>`,'s'))?.[1];
+  assert.ok(panel?.includes(`src="/assets/programme-${file}"`),id);
+  assert.ok(carousel?.includes(`src="/assets/programme-${file}"`),id);
+  const image=await request(`/assets/programme-${file}`);
+  assert.equal(image.status,200);assert.equal(image.headers['Content-Type'],'image/webp');assert.ok(image.body.length>1000);
+ }
+ assert.equal((await request('/images/mawonga-courses/missing.webp')).status,404);
 });
