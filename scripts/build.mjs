@@ -57,7 +57,7 @@ const homepageProgrammeImages={
  ethics:{file:'biomedical-practice.webp',alt:'A biomedical professional working with laboratory samples and analysis equipment'},
  business:{file:'medical-entrepreneurship.webp',alt:'Healthcare professionals discussing practice plans around a meeting table'}
 };
-function homepageProgrammeImage(id,priority=false){const image=homepageProgrammeImages[id];return `<picture><img src="/images/mawonga-courses/${image.file}" width="1024" height="768" alt="${image.alt}" ${priority?'fetchpriority="high"':'loading="lazy"'} decoding="async"></picture>`;}
+function homepageProgrammeImage(id,priority=false){const image=homepageProgrammeImages[id];return `<picture><img src="/assets/programme-${image.file}" width="1024" height="768" alt="${image.alt}" ${priority?'fetchpriority="high"':'loading="lazy"'} decoding="async"></picture>`;}
 function pathwayIcon(id) {
  const drawings={
  clinical:'<path class="icon-draw" pathLength="1" d="M24 12v19a16 16 0 0 0 32 0V12M20 12h8m24 0h8M40 47v8a15 15 0 0 0 30 0v-9"/><circle cx="70" cy="39" r="8" fill="currentColor"/><path class="icon-detail" d="M67 39h6m-3-3v6"/>',

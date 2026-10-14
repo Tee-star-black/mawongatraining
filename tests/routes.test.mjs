@@ -67,9 +67,9 @@ test('new programme photos are connected to the matching homepage panels',async(
  const files={clinical:'clinical-training.webp',ethics:'biomedical-practice.webp',business:'medical-entrepreneurship.webp'};
  for(const [id,file] of Object.entries(files)){
   const panel=html.match(new RegExp(`<article class="programme-panel" id="panel-${id}"[^>]*>(.*?)</article>`,'s'))?.[1];
-  assert.ok(panel?.includes(`src="/images/mawonga-courses/${file}"`),id);
-  assert.ok(carousel?.includes(`src="/images/mawonga-courses/${file}"`),id);
-  const image=await request(`/images/mawonga-courses/${file}`);
+  assert.ok(panel?.includes(`src="/assets/programme-${file}"`),id);
+  assert.ok(carousel?.includes(`src="/assets/programme-${file}"`),id);
+  const image=await request(`/assets/programme-${file}`);
   assert.equal(image.status,200);assert.equal(image.headers['Content-Type'],'image/webp');assert.ok(image.body.length>1000);
  }
  assert.equal((await request('/images/mawonga-courses/missing.webp')).status,404);
