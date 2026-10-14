@@ -816,3 +816,10 @@ img,picture{max-width:100%}
 .home-page #panel-ethics .programme-photograph img{object-position:34% center}
 .home-page #panel-business .programme-photograph img{object-position:47% center}
 @media(max-width:760px){.home-page .programme-photograph img{object-position:center center}}
+
+/* Programme photographs stay visible in the main homepage story. */
+.knowledge-card-photo{margin:0 0 24px;aspect-ratio:16/10;overflow:hidden;background:var(--navy)}
+.knowledge-card-photo picture{display:block;width:100%;height:100%}
+.knowledge-card-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.home-page .hero-photo img{object-position:58% center}
+@media(max-width:760px){.knowledge-card-photo{margin-bottom:20px}.home-page .hero-photo img{object-position:55% center}}

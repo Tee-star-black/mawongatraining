@@ -60,10 +60,15 @@ test('prospectus badges stay with their matching learning stream and course list
 
 test('new programme photos are connected to the matching homepage panels',async()=>{
  const html=(await request('/')).body.toString();
+ const hero=html.match(/<figure class="hero-photo">(.*?)<\/figure>/s)?.[1];
+ assert.match(hero,/clinical-training\.webp/);
+ assert.match(hero,/fetchpriority="high"/);
+ const carousel=html.match(/<div class="knowledge-track"[^>]*>(.*?)<div class="carousel-controls"/s)?.[1];
  const files={clinical:'clinical-training.webp',ethics:'biomedical-practice.webp',business:'medical-entrepreneurship.webp'};
  for(const [id,file] of Object.entries(files)){
   const panel=html.match(new RegExp(`<article class="programme-panel" id="panel-${id}"[^>]*>(.*?)</article>`,'s'))?.[1];
   assert.ok(panel?.includes(`src="/images/mawonga-courses/${file}"`),id);
+  assert.ok(carousel?.includes(`src="/images/mawonga-courses/${file}"`),id);
   const image=await request(`/images/mawonga-courses/${file}`);
   assert.equal(image.status,200);assert.equal(image.headers['Content-Type'],'image/webp');assert.ok(image.body.length>1000);
  }
