@@ -46,14 +46,14 @@ test('removed partner branding and legacy artwork are absent from public routes'
 
 test('prospectus badges stay with their matching learning stream and course list',async()=>{
  const html=(await request('/course-prospectus/')).body.toString();
- assert.match(html,/<img src="\/assets\/prospectus-learning-lab\.webp"/);
+ assert.match(html,/<img src="\/assets\/prospectus-shield-cutout\.webp"/);
  const groups=[...html.matchAll(/<section class="course-group"[^>]*data-course-group="([^"]+)">(.*?)<\/section>/gs)];
  assert.deepEqual(groups.map(group=>group[1]),['practice','business','marketing','leadership','digital','me']);
  const expected={practice:[1,2,3],business:[4,5,6],marketing:[7,8,9],leadership:[10,11],digital:[12,13],me:[14,15]};
  for(const [,stream,group] of groups){
-  assert.ok(group.includes(`src="/assets/stream-${stream}.webp"`),stream);
+  assert.ok(group.includes(`src="/assets/stream-${stream}-cutout.webp"`),stream);
   const courses=[...group.matchAll(/class="catalogue-course" id="course-(\d+)"/g)].map(match=>Number(match[1]));
   assert.deepEqual(courses,expected[stream]);
-  assert.equal((await request(`/assets/stream-${stream}.webp`)).status,200);
+  assert.equal((await request(`/assets/stream-${stream}-cutout.webp`)).status,200);
  }
 });

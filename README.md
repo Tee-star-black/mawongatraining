@@ -80,4 +80,8 @@ Solid deep-blue and burnt-orange section backgrounds now contrast with light cou
 
 ## Prospectus image alignment
 
-The seven supplied images in images/MTImages now appear on the prospectus. The prospectus shield introduces the page, and each category badge appears in its directory tile and group header: nurse-led practice, business and finance, marketing and outreach, leadership, digital health, and quality improvement. The six badge files retain their source proportions and transparency. All seven optimised WebP files total approximately 114 KiB. Original uploads are unchanged.
+The seven supplied images in images/MTImages now appear on the prospectus. The prospectus shield introduces the page, and each category badge appears in its directory tile and group header: nurse-led practice, business and finance, marketing and outreach, leadership, digital health, and quality improvement. The six badge files retain their source proportions and transparency. The first seven optimised WebP files total approximately 114 KiB and remain unchanged as source references; the active page now uses the newer transparent cutouts described below. Original uploads are unchanged.
+
+## Transparent stepped prospectus
+
+The prospectus now uses transparent cutout versions of the supplied seven emblems. Its shield sits behind the hero content in a subdued navy composition. Six numbered learning steps alternate between artwork on the left and on the right at desktop widths. On mobile they follow one consistent order: artwork, group introduction, courses. Search/filter/reset continue to hide and restore whole steps without changing course order.

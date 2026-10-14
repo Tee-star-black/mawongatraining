@@ -42,3 +42,9 @@ The images uploaded to images/MTImages are used on the prospectus. Originals rem
 | prospectus.jpg | prospectus-learning-lab.webp | Main prospectus illustration |
 
 Badges preserve their source dimensions and alpha channel, and load lazily. The main prospectus image is optimised to 1200px with priority loading. No generative image changes were applied.
+
+## Transparent cutouts and stepped prospectus
+
+Background extraction used the built-in image editing tool on the seven supplied MTImages files. Prompt set: remove only the gray/white backdrop and external floor shadow, preserve each complete emblem and its internal colours/details, retain opaque pale areas inside the emblem, and return genuine alpha transparency without redesign or added text. The original uploads and first optimised versions are unchanged.
+
+Final project assets: assets/stream-practice-cutout.webp, stream-business-cutout.webp, stream-marketing-cutout.webp, stream-leadership-cutout.webp, stream-digital-cutout.webp, stream-me-cutout.webp and prospectus-shield-cutout.webp. The generated cutouts are resized and compressed as WebP while retaining alpha. The final assets are used by both navigation and the alternating step layout. The hero uses the prospectus cutout with CSS opacity and brightness over navy; no shading is baked into the asset.

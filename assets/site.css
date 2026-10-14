@@ -752,3 +752,60 @@ img,picture{max-width:100%}
  .page-course-prospectus .lab-window>img{height:220px}
 }
 @media print{.stream-identity .stream-artwork{width:80px;height:80px}}
+
+/* Prospectus: a shadowed emblem hero and alternating learning steps. */
+.page-course-prospectus .prospectus-hero-shadow{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:34px;isolation:isolate;overflow:hidden;min-height:650px;padding:80px var(--gutter);background:#102f47;text-align:center}
+.prospectus-hero-shadow>div:first-child{position:relative;z-index:2;max-width:820px}
+.prospectus-hero-shadow h1{font-size:clamp(40px,5.3vw,78px);text-shadow:0 3px 20px #071b2f}
+.prospectus-hero-shadow>div>p{max-width:680px;margin-inline:auto;color:#e2ebf2;font-size:16px}
+.page-course-prospectus .prospectus-hero-shadow>aside{position:relative;z-index:2;display:flex;flex-direction:row;align-items:center;justify-content:center;flex-wrap:wrap;gap:18px 24px;border:0;padding:20px 28px;background:#102f47e8;box-shadow:0 0 0 1px #ffffff25}
+.prospectus-hero-shadow aside>.eyebrow{width:100%}
+.prospectus-hero-shadow aside>strong{font-size:42px}
+.prospectus-hero-shadow aside>.text-link{margin:0}
+.page-course-prospectus .prospectus-hero-shadow>.lab-window{position:absolute;inset:0;z-index:0;margin:0;border:0;box-shadow:none;background:none;max-width:none;pointer-events:none}
+.page-course-prospectus .prospectus-hero-shadow>.lab-window>img{position:absolute;width:100%;height:100%;padding:24px;object-fit:contain;opacity:.38;filter:brightness(.7) saturate(.8) drop-shadow(0 28px 24px #00000080)}
+.prospectus-hero-shadow .lab-window figcaption{position:absolute;bottom:0;left:0;right:0;background:transparent;font-size:8px;color:#d6e3ee;padding:12px;opacity:.7}
+.page-course-prospectus .catalogue-groups{position:relative;display:grid;gap:55px;padding-block:20px}
+.page-course-prospectus .catalogue-groups::before{content:'';position:absolute;top:35px;bottom:20px;left:50%;width:2px;background:#b9ccdd}
+.page-course-prospectus .course-group{position:relative;display:grid;grid-template-columns:minmax(190px,.65fr) minmax(0,1.35fr);gap:35px;align-items:start;margin:0;padding:0;border:0;box-shadow:none;background:transparent;scroll-margin-top:115px}
+.stream-step-visual{position:sticky;top:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:35px 20px;min-width:0}
+.stream-step-visual .stream-artwork{width:clamp(160px,22vw,290px);height:clamp(160px,23vw,300px);object-fit:contain;filter:drop-shadow(0 14px 14px #234c6d25)}
+.stream-step-number{display:flex;align-items:center;justify-content:center;min-width:52px;height:48px;background:var(--navy);color:white;border-bottom:4px solid var(--brand-orange);font:500 20px/1 var(--display);letter-spacing:.03em;box-shadow:6px 6px 0 #bdcedd}
+.stream-step-content{position:relative;min-width:0;background:white;border:1px solid #bed0df;border-top:6px solid var(--blue);padding:25px;box-shadow:7px 7px 0 #dbe6ef}
+.page-course-prospectus .course-group:nth-child(even){grid-template-columns:minmax(0,1.35fr) minmax(190px,.65fr)}
+.course-group:nth-child(even) .stream-step-visual{grid-column:2;grid-row:1}
+.course-group:nth-child(even) .stream-step-content{grid-column:1;grid-row:1;border-top-color:var(--orange-panel)}
+.page-course-prospectus .course-group-heading{display:flex;flex-direction:column;align-items:center;gap:15px;padding-top:0;text-align:center}
+.course-group-heading h2{font-size:clamp(27px,2.5vw,35px)}
+.course-group-heading .step-label{color:var(--orange)}
+.course-group-heading .group-count{align-self:center}
+.stream-step-content .course-summary h3{font-size:clamp(22px,2vw,29px)}
+.stream-step-content .catalogue-course summary{gap:15px}
+.stream-step-content .catalogue-body{grid-template-columns:minmax(0,1fr);padding:22px 18px}
+.stream-step-content .catalogue-body>a,.stream-step-content .course-context{grid-column:1}
+.page-course-prospectus .stream-directory .stream-artwork{filter:drop-shadow(0 4px 5px #234c6d15)}
+@media(max-width:1000px){
+ .page-course-prospectus .course-group{grid-template-columns:minmax(150px,.55fr) minmax(0,1.45fr);gap:24px}
+ .page-course-prospectus .course-group:nth-child(even){grid-template-columns:minmax(0,1.45fr) minmax(150px,.55fr)}
+ .stream-step-content{padding:20px}
+ .stream-step-visual{padding-inline:10px}
+}
+@media(max-width:760px){
+ .page-course-prospectus .prospectus-hero-shadow{padding:55px var(--gutter) 45px;min-height:590px;gap:28px}
+ .prospectus-hero-shadow h1{font-size:clamp(34px,8.2vw,58px)}
+ .prospectus-hero-shadow>div>p{font-size:14px;line-height:1.85}
+ .page-course-prospectus .prospectus-hero-shadow>aside{padding:17px 20px;gap:12px 18px}
+ .prospectus-hero-shadow aside>strong{font-size:36px}
+ .page-course-prospectus .prospectus-hero-shadow>.lab-window>img{padding:15px;opacity:.3}
+ .page-course-prospectus .catalogue-groups{gap:38px}
+ .page-course-prospectus .catalogue-groups::before{display:none}
+ .page-course-prospectus .course-group,.page-course-prospectus .course-group:nth-child(even){display:flex;flex-direction:column;gap:20px}
+ .stream-step-visual{position:static;align-self:center;min-height:0;padding:15px 0 5px;gap:16px}
+ .stream-step-visual .stream-artwork{width:200px;height:200px}
+ .stream-step-content{width:100%;padding:20px 16px;box-shadow:4px 4px 0 #dbe6ef}
+ .page-course-prospectus .course-group-heading{display:flex}
+ .stream-step-content .course-summary h3{font-size:clamp(21px,5.8vw,26px)}
+ .stream-step-content .catalogue-course summary{gap:10px}
+ .stream-step-content .catalogue-body{padding:20px 12px}
+}
+@media print{.prospectus-hero-shadow>.lab-window,.catalogue-groups::before{display:none}.page-course-prospectus .course-group,.page-course-prospectus .course-group:nth-child(even){display:block}.stream-step-visual{position:static}.stream-step-content{border:1px solid #999;box-shadow:none}}
