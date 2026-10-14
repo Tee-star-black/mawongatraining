@@ -809,3 +809,10 @@ img,picture{max-width:100%}
  .stream-step-content .catalogue-body{padding:20px 12px}
 }
 @media print{.prospectus-hero-shadow>.lab-window,.catalogue-groups::before{display:none}.page-course-prospectus .course-group,.page-course-prospectus .course-group:nth-child(even){display:block}.stream-step-visual{position:static}.stream-step-content{border:1px solid #999;box-shadow:none}}
+
+/* Homepage programme photographs replace the earlier illustrations in these panels. */
+.home-page .programme-photograph img{object-fit:cover;padding:0}
+.home-page #panel-clinical .programme-photograph img{object-position:55% center}
+.home-page #panel-ethics .programme-photograph img{object-position:34% center}
+.home-page #panel-business .programme-photograph img{object-position:47% center}
+@media(max-width:760px){.home-page .programme-photograph img{object-position:center center}}

@@ -46,7 +46,7 @@ This repository change does not deploy the live domain. It also does not submit 
 
 See `docs/seo-implementation.md` for the supplied SEO guide review and implementation decisions. Automated checks cover page links and fragments, asset existence, metadata, JSON-LD, course count and sitemap coverage. Tests cover route handling, legacy redirects, images, restricted runtime files and browser interaction logic.
 
-Automated checks and 19 tests pass. A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.
+Automated checks and 20 tests pass. A browser visual review on desktop and mobile is still required; browser automation was unavailable in this session. Typography uses Google Fonts with local system fallbacks.
 
 ## Creative direction and motion
 

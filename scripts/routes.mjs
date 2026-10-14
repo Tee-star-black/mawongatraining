@@ -18,6 +18,7 @@ export function route(pathname) {
   if (aliases[path]) return { redirect: aliases[path] };
   if (pages[path]) return { file: pages[path] };
   if (!path.endsWith('/') && (pages[path + '/'] || aliases[path + '/'])) return { redirect: aliases[path + '/'] || path + '/' };
+  if (/^\/images\/mawonga-courses\/(?:clinical-training|biomedical-practice|medical-entrepreneurship)\.webp$/.test(path)) return { file: path.slice(1) };
   if (/^\/(?:assets|images)\/[a-zA-Z0-9 _().&-]+\.(?:webp|png|jpe?g|svg|css|js)$/i.test(path)) return { file: path.slice(1) };
   if (['/robots.txt','/sitemap.xml','/google736522bf4b7fa0e6.html'].includes(path)) return { file: path.slice(1) };
   return null;
