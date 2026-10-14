@@ -823,3 +823,8 @@ img,picture{max-width:100%}
 .knowledge-card-photo img{display:block;width:100%;height:100%;object-fit:cover}
 .home-page .hero-photo img{object-position:58% center}
 @media(max-width:760px){.knowledge-card-photo{margin-bottom:20px}.home-page .hero-photo img{object-position:55% center}}
+
+/* Draw arrows as vectors rather than platform-dependent emoji glyphs. */
+.arrow-icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;vertical-align:middle;line-height:1}
+.arrow-icon svg{display:block;width:1em;height:1em;min-width:1em;overflow:visible}
+.carousel-controls button{display:inline-flex;align-items:center;justify-content:center}
