@@ -1,0 +1,74 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build:vercel",
+  "outputDirectory": "dist",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us.html",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/clinical-training.html",
+      "destination": "/clinical-training/",
+      "permanent": true
+    },
+    {
+      "source": "/biomedical-ethics.html",
+      "destination": "/biomedical-ethics/",
+      "permanent": true
+    },
+    {
+      "source": "/medical-entreprenuership.html",
+      "destination": "/medical-entrepreneurship/",
+      "permanent": true
+    },
+    {
+      "source": "/medical-entrepreneurship.html",
+      "destination": "/medical-entrepreneurship/",
+      "permanent": true
+    },
+    {
+      "source": "/medical-entreprenuership/",
+      "destination": "/medical-entrepreneurship/",
+      "permanent": true
+    },
+    {
+      "source": "/course-prospectus.html",
+      "destination": "/course-prospectus/",
+      "permanent": true
+    },
+    {
+      "source": "/partners.html",
+      "destination": "/partners/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us.html",
+      "destination": "/contact-us/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy.html",
+      "destination": "/privacy-policy/",
+      "permanent": true
+    }
+  ]
+}
